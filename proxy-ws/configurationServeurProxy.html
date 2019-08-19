@@ -139,7 +139,12 @@
 <div class="section">
 <h3><a name="Configuration_du_serveur_Proxy"></a>Configuration du serveur Proxy</h3>
 <p>Le serveur proxy-ws est une application spring-boot configurable par l'interm&#xe9;diaire d'un fichier <tt>application.yml</tt>. Les param&#xe8;tres configurables sont, l'url du serveur DMP, les informations concernant les certificats serveurs, ...</p>
-<p>Exemple : +-------------------------------------------------------------------------------+ dmpc: # url du serveur DMP url.prefix: https://dev1.lps2.dmp.gouv.fr/si-dmp-server/v2/services +-------------------------------------------------------------------------------+</p></div>
+<p>Exemple : </p>
+<div class="source"><pre class="prettyprint linenums">dmpc:
+    # url du serveur DMP
+    url.prefix:
+            https://dev1.lps2.dmp.gouv.fr/si-dmp-server/v2/services
+</pre></div></div>
 <div class="section">
 <h3><a name="Lancement_du_serveur"></a>Lancement du serveur </h3>
 <div class="source"><pre class="prettyprint linenums">%&gt; java -Dspring.config.location=application.yml -jar dmpc-proxy-ws.jar 

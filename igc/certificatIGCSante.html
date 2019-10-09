@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20191009" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>DMPC-API : Le connecteur DMP par DEVCOOP &#x2013; Migration vers la nouvelle IGC Santé</title>
+    <title>DMPC-API : Le connecteur DMP par DEVCOOP &#x2013; Obtention de certificat seurveur auprès de la nouvelle IGC Santé</title>
     <link rel="stylesheet" href="../css/apache-maven-fluido-1.5.min.css" />
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/print.css" media="print" />
@@ -24,7 +24,7 @@
                         de l ensemble des transactions définies dans le cahier des charges 
                         pour la DMP Compatibilité. 
                         Elle facilite ainsi aux intégrateurs/éditeurs la mise en place des 
-                        contraintes fortes imposées par l ASIP Santé pour la DMP Compatibilité."/>
+                        contraintes fortes demandées pour la DMP Compatibilité."/>
                       </head>
         <body class="topBarEnabled">
           
@@ -45,10 +45,10 @@
                       <li>      <a href="../index.html"  title="Introduction">Introduction</a>
 </li>
                   
-                      <li>      <a href="../docReference.html"  title="Liens vers les documentations">Liens vers les documentations</a>
+                      <li>      <a href="../igc/certificatIGCSante.html"  title="Certificats serveurs IGC Santé">Certificats serveurs IGC Santé</a>
 </li>
                   
-                      <li>      <a href="../igc/migrationIGCSante.html"  title="Intégration nouvelle IGC Santé">Intégration nouvelle IGC Santé</a>
+                      <li>      <a href="../docReference.html"  title="Liens vers les documentations">Liens vers les documentations</a>
 </li>
                           </ul>
       </li>
@@ -128,9 +128,10 @@
                 
         <div id="bodyColumn" >
                                   
-            <h1>Migration vers la nouvelle IGC Sant&#xe9;</h1>
-<p>Une nouvelle IGC Sant&#xe9; a &#xe9;t&#xe9; mise en place par la CNAMTS courant 2016m :<br /><a class="externalLink" href="http://integrateurs-cps.asipsante.fr/IGC-Sante">http://integrateurs-cps.asipsante.fr/IGC-Sante</a></p>
-<p>L&#x2019;int&#xe9;gration dans la DMPC-API suit les pr&#xe9;conisations d&#xe9;finies dans <a class="externalLink" href="https://industriels.sesam-vitale.fr/documents/823064/0/DMP+Notice+Migration+IGC+Sant%C3%A9/065c6192-247c-462b-bcd5-24a8d708e592">https://industriels.sesam-vitale.fr/documents/823064/0/DMP+Notice+Migration+IGC+Sant%C3%A9/065c6192-247c-462b-bcd5-24a8d708e592</a> .</p>
+            <h1>Obtention de certificat seurveur aupr&#xe8;s de la nouvelle IGC Sant&#xe9;</h1>
+<p>Une nouvelle IGC Sant&#xe9; a &#xe9;t&#xe9; mise en place par la CNAMTS courant 2016 : <a class="externalLink" href="http://integrateurs-cps.asipsante.fr/IGC-Sante">http://integrateurs-cps.asipsante.fr/IGC-Sante</a></p>
+<p>Afin d&#x2019;utiliser le connecteur DMPC-API en mode authentification indirecte, il vous faut obtenir des certificats serveurs provenant de cette autorit&#xe9;. Pour cel&#xe0; apr&#xe8;s avoir command&#xe9; des cartes CPS vous pouvez faire une demande &#xe0; partir d&#x2019;un t&#xe9;l&#xe9;service dont la proc&#xe9;dure est d&#xe9;crite ici.</p>
+<p>Rem :&#xa0;L&#x2019;int&#xe9;gration dans la DMPC-API suit les pr&#xe9;conisations d&#xe9;finies dans <a class="externalLink" href="https://industriels.sesam-vitale.fr/documents/823064/0/DMP+Notice+Migration+IGC+Sant%C3%A9/065c6192-247c-462b-bcd5-24a8d708e592">https://industriels.sesam-vitale.fr/documents/823064/0/DMP+Notice+Migration+IGC+Sant%C3%A9/065c6192-247c-462b-bcd5-24a8d708e592</a> .</p>
 <div class="section">
 <h2><a name="Obtention_des_certificats_et_cls."></a>Obtention des certificats et cl&#xe9;s.</h2>
 <p>Pour obtenir, les certificats et cl&#xe9;s n&#xe9;cessaires pour la connexion au DMP, il est possible d&#xe9;sormais de les commander sur un site web mis &#xe0; disposition par l&#x2019;ASIP Sant&#xe9;. Il s&#x2019;agit d&#x2019;un service permettant la commande de certificats et cartes :&#xa0;</p>
@@ -193,7 +194,7 @@
 <p><img src="./pfcngDemandeStep3Sign.PNG" alt="pfcng" /></p></div></div>
 <div class="section">
 <h2><a name="Configuration_de_la_DMPC-API"></a>Configuration de la DMPC-API</h2>
-<p>Les propri&#xe9;t&#xe9;s impact&#xe9;es par la nouvelle IGC Sant&#xe9; sont :</p>
+<p>Le param&#xe8;trage de ces certificats pour la DMPC-API se trouve dans le <tt>application.yml</tt></p>
 
 <ul>
   
@@ -212,21 +213,27 @@
 <p>Exemple configuration pour un acc&#xe8;s sur le serveur dev1 (serveur de test commun) avec des p12 provenant de la nouvelle IGC</p>
 
 <div class="source">
-<div class="source"><pre class="prettyprint linenums"># Url du serveur DMP
-dmpc.url.prefix=https://dev1.lps-igc-sante.dmp.gouv.fr/si-dmp-server/v1/services/
-
-# chemin vers le keystore smime pour la signature, g&#xe9;n&#xe9;r&#xe9; par CleoCPS et valid&#xe9; par le GIP CPS.
-dmpc.smime.p12.path=asip-p12-EL-TEST-ORG-SIGN-20170601-224320.p12
-# mot de passe du certificat smime
-dmpc.smime.p12.password=changeit
-
-# chemin vers le keystore ssl pour connexion tls, g&#xe9;n&#xe9;r&#xe9; par CleoCPS et valid&#xe9; par le GIP CPS.
-dmpc.ssl.p12.path=asip-p12-EL-TEST-ORG-AUTH_CLI-20170603-173116.p12
-# mot de passe du certificat smime
-dmpc.ssl.p12.password=changeit
-
-# chemin vers le truststore ssl, des diff&#xe9;rentes IGC
-dmpc.ssl.trust.path=truststoreIgcSante-EL-ORG.jks
+<div class="source"><pre class="prettyprint linenums">dmpc:
+   # informations relatives au certificat smime
+    smime:
+        p12:
+            path:
+                #./smime.p12
+                A_renseigner 
+            password:
+                A_renseigner
+    # informations relatives au certificat ssl
+    ssl:
+        p12:
+            path:
+                #ssl.p12
+                A_renseigner
+            password:
+                A_renseigner
+        # Contient les certificats serveurs autoris&#xe9;s pour authentification mutuelle         
+        trust:
+            path:
+                truststoreIgcSante-EL-ORG.jks
 </pre></div></div></div>
                   </div>
           </div>

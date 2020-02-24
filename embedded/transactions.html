@@ -58,6 +58,9 @@
         
                       <li>      <a href="../embedded/firstStepEmbedded.html"  title="Commencer">Commencer</a>
 </li>
+                  
+                      <li>      <a href="../embedded/transactions.html"  title="Transactions supportées">Transactions supportées</a>
+</li>
                           </ul>
       </li>
                 <li class="dropdown">
@@ -129,26 +132,26 @@
         <div id="bodyColumn" >
                                   
             <h1>Les diff&#xe9;rentes transactions vers le DMP</h1>
+<p>Toutes transactions vers le DMP&#xa0;se fait en pr&#xe9;cisant un <tt>DMPCContext</tt> et une requ&#xea;te sp&#xe9;cifique en argument d&#x2019;une m&#xe9;thode du <tt>DMPCClient</tt>.</p>
+<p>Le <tt>DMPCContext</tt> contient les informations permettant de d&#xe9;finir :&#xa0;</p>
 
-<div class="source">
-<div class="source"><pre class="prettyprint linenums">Toutes transactions vers le DMP&#xa0;se fait en pr&#xe9;cisant un `DMPCContext` et une requ&#xea;te sp&#xe9;cifique en argument d'une m&#xe9;thode du `DMPCClient`.
-</pre></div></div>
-<p>Le <tt>DMPCContext</tt> contient les informations permettant de d&#xe9;finir :&#xa0;  * L&#x2019;auteur de la transaction,  * Le code de confidentialit&#xe9; de la transaction (connexion secr&#xe8;te, invisible aux repr&#xe9;sentants l&#xe9;gaux du patient)  * L&#x2019;autorit&#xe9; des cartes vitales utilis&#xe9;es (r&#xe9;elles ou test)</p>
+<ul>
+  
+<li>L&#x2019;auteur de la transaction,</li>
+  
+<li>Le code de confidentialit&#xe9; de la transaction (connexion secr&#xe8;te, invisible aux repr&#xe9;sentants l&#xe9;gaux du patient)</li>
+  
+<li>L&#x2019;autorit&#xe9; des cartes vitales utilis&#xe9;es (r&#xe9;elles ou test)</li>
+</ul>
 <p>&#xc0; ce <tt>DMPCContext</tt> est associ&#xe9; un autre argument d&#xe9;pendant de la transaction r&#xe9;alis&#xe9;e.</p>
 <div class="section">
 <h2><a name="Mode_dauthentification"></a>Mode d&#x2019;authentification</h2>
 <div class="section">
 <h3><a name="directe_since_version_3.1_de_la_DMPC-API"></a>directe (@since version 3.1 de la DMPC-API)</h3>
-
-<div class="source">
-<div class="source"><pre class="prettyprint linenums">En authentification directe, l'utilisateur personnel de sant&#xe9; est authentifi&#xe9; par sa carte CPS/CPE, ces informations sont r&#xe9;cup&#xe9;r&#xe9;s lors de la lecture de la carte CPS.
-</pre></div></div></div>
+<p>En authentification directe, l&#x2019;utilisateur personnel de sant&#xe9; est authentifi&#xe9; par sa carte CPS/CPE, ces informations sont r&#xe9;cup&#xe9;r&#xe9;s lors de la lecture de la carte CPS.</p></div>
 <div class="section">
 <h3><a name="indirecte"></a>indirecte</h3>
-
-<div class="source">
-<div class="source"><pre class="prettyprint linenums">En authentification indirecte, seule la structure de sant&#xe9; (par son certificat serveur) est authentifi&#xe9;e.
-</pre></div></div>
+<p>En authentification indirecte, seule la structure de sant&#xe9; (par son certificat serveur) est authentifi&#xe9;e.</p>
 <p>L&#x2019;auteur de la requ&#xea;te, c&#x2019;est &#xe0; dire le personnel de sant&#xe9; utilisateur (<tt>DMPCPersonnelSante</tt>), doit donc &#xea;tre authentifi&#xe9; localement. Le syst&#xe8;me de la structure de sant&#xe9; doit &#xea;tre en mesure d&#x2019;authentifi&#xe9; ses utilisateurs. Cet identifiant local au syst&#xe8;me doit &#xea;tre sp&#xe9;cifi&#xe9; dans <tt>DMPCPersonnelSante.internalId</tt> m&#xea;me si le rpps est connu.</p>
 <p>Exemple : </p>
 
@@ -188,51 +191,60 @@ context.setAuthor(ps);
 <div class="section">
 <h3><a name="getCodesFor"></a>getCodesFor()</h3>
 <p>M&#xe9;thode permettant d&#x2019;acc&#xe9;der aux diff&#xe9;rents jeux de valeurs impos&#xe9;s par le Guide d&#x2019;int&#xe9;gration.</p>
-<p>notamment :&#xa0; ``` public enum ASIPJeuxValeurs {</p>
+<p>notamment :&#xa0;</p>
 
 <div class="source">
-<div class="source"><pre class="prettyprint linenums">    QUALITE_REPRESENTANT_LEGAL,
-    AUTHOR_SPECIALITY,
-    CLASS_CODE,
-    CONFIDENTIALITY_CODE,
-    CONTENT_TYPE_CODE,
-    FORMAT_CODE,
-    HEALTH_CARE_FACILITY_TYPE_CODE,
-    PRACTICE_SETTING_CODE,
-    SUBJECT_ROLE,
-    TYPE_CODE,
-    RESTRICTION_AUDIENCE_VIHF
+<div class="source"><pre class="prettyprint linenums">public enum ASIPJeuxValeurs {
+
+        QUALITE_REPRESENTANT_LEGAL,
+        AUTHOR_SPECIALITY,
+        CLASS_CODE,
+        CONFIDENTIALITY_CODE,
+        CONTENT_TYPE_CODE,
+        FORMAT_CODE,
+        HEALTH_CARE_FACILITY_TYPE_CODE,
+        PRACTICE_SETTING_CODE,
+        SUBJECT_ROLE,
+        TYPE_CODE,
+        RESTRICTION_AUDIENCE_VIHF
+    }
+</pre></div></div>
+<p>Exemple :</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint linenums">    List&lt;DMPCCode&gt; allPersonnelDeSanteSpecialities = client.getCodesFor(DMPCCode.ASIPJeuxValeurs.AUTHOR_SPECIALITY);
+    List&lt;DMPCCode&gt; allPossibleFormatCodesForADocument = client.getCodesFor(DMPCCode.ASIPJeuxValeurs.FORMAT_CODE);
+</pre></div></div></div></div>
+<div class="section">
+<h2><a name="Gestion_des_erreurs"></a>Gestion des erreurs</h2>
+<p>L&#x2019;ensemble des erreurs provenant du DMP, dont le message doit &#xea;tre r&#xe9;cup&#xe9;r&#xe9; est remont&#xe9; au travers d&#x2019;une DMPCException dont le message est celui du DMP.</p></div>
+<div class="section">
+<h2><a name="Transactions_didentification_du_patient"></a>Transactions d&#x2019;identification du patient</h2>
+<div class="section">
+<h3><a name="TD_0.0_:Acquisition_de_lidentit_du_patient"></a>TD 0.0 :&#xa0;Acquisition de l&#x2019;identit&#xe9; du patient</h3>
+<p>Cette fonctionnalit&#xe9; permet au LPS d&#x2019;acqu&#xe9;rir l&#x2019;identit&#xe9; du patient et de d&#xe9;clencher les m&#xe9;canismes d&#x2019;identito-vigilance. Avant le premier acc&#xe8;s au DMP d&#x2019;un patient via les interfaces LPS v2 du syst&#xe8;me DMP, le LPS :</p>
+
+<ul>
+  
+<li>acquiert l&#x2019;INS et les traits d&#x2019;identit&#xe9; du patient (cf. RG_0110) via la transaction TD0.0,</li>
+  
+<li>d&#xe9;clenche les m&#xe9;canismes d&#x2019;identito-vigilance en utilisant les donn&#xe9;es d&#x2019;identification du patient fournies par la transaction TD0.0 (cf. RG_0130).</li>
+  
+<li>d&#xe9;termine le statut de l&#x2019;INS du patient (cf. RG_0140).</li>
+</ul>
+<p>Pour les acc&#xe8;s suivants, le LPS acquiert l&#x2019;INS du patient stock&#xe9; en base locale.</p>
+<p>Exemple :&#xa0;</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint linenums">final TD00Request td00Request = new TD00Request();
+td00Request.setDateNaissance(&quot;2011-06-07&quot;);
+td00Request.setNirOuvrantDroit(new DMPCNir(&quot;211066322074514&quot;));
+td00Request.setNirIndividu(new DMPCNir(&quot;150060475546974&quot;));
+final TD00Response td00Response = client.td00Identity(context, td00Request);
+if (td00Response == null) {
+    throw new RuntimeException(&quot;L'ayant droit n'existe pas&quot;);
 }
-</pre></div></div>
-
-<div class="source">
-<div class="source"><pre class="prettyprint linenums">Exemple :
-
-</pre></div></div>
-
-<div class="source">
-<div class="source"><pre class="prettyprint linenums">List&lt;DMPCCode&gt; allPersonnelDeSanteSpecialities = client.getCodesFor(DMPCCode.ASIPJeuxValeurs.AUTHOR_SPECIALITY);
-List&lt;DMPCCode&gt; allPossibleFormatCodesForADocument = client.getCodesFor(DMPCCode.ASIPJeuxValeurs.FORMAT_CODE);
-</pre></div></div>
-
-<div class="source">
-<div class="source"><pre class="prettyprint linenums">## Transactions d'identification du patient 
-
-
-### TD 0.0 :&#xa0;Acquisition de l'identit&#xe9; du patient
-
- Cette fonctionnalit&#xe9; permet au LPS d&#x2019;acqu&#xe9;rir l&#x2019;identit&#xe9; du patient et de d&#xe9;clencher les m&#xe9;canismes d&#x2019;identito-vigilance.
-Avant le premier acc&#xe8;s au DMP d&#x2019;un patient via les interfaces LPS v2 du syst&#xe8;me DMP, le LPS :
- * acquiert l&#x2019;INS et les traits d&#x2019;identit&#xe9; du patient (cf. RG_0110) via la transaction TD0.0,
- * d&#xe9;clenche les m&#xe9;canismes d&#x2019;identito-vigilance en utilisant les donn&#xe9;es d&#x2019;identification du patient fournies par la transaction TD0.0 (cf. RG_0130).
- * d&#xe9;termine le statut de l&#x2019;INS du patient (cf. RG_0140).
-
-Pour les acc&#xe8;s suivants, le LPS acquiert l&#x2019;INS du patient stock&#xe9; en base locale.
-
-Exemple :&#xa0;
-
-</pre></div></div>
-<p>final TD00Request td00Request = new TD00Request(); td00Request.setDateNaissance(&#x201c;2011-06-07&#x201d;); td00Request.setNirOuvrantDroit(new DMPCNir(&#x201c;211066322074514&#x201d;)); td00Request.setNirIndividu(new DMPCNir(&#x201c;150060475546974&#x201d;)); final TD00Response td00Response = client.td00Identity(context, td00Request); if (td00Response == null) {  throw new RuntimeException(&#x201c;L&#x2019;ayant droit n&#x2019;existe pas&#x201d;); } ```</p></div>
+</pre></div></div></div>
 <div class="section">
 <h3><a name="TD0.2_:_test_dexistence_du_DMP_dun_patient_et_vrification_de_lautorisation_daccs"></a>TD0.2 : test d&#x2019;existence du DMP d&#x2019;un patient et v&#xe9;rification de l&#x2019;autorisation d&#x2019;acc&#xe8;s</h3>
 <p>Cette transaction permet de tester l&#x2019;existence d&#x2019;un DMP et de v&#xe9;rifier les autorisations d&#x2019;acc&#xe8;s ainsi que de r&#xe9;cup&#xe9;rer les informations concernant la cr&#xe9;ation du compte patient.</p>
@@ -260,8 +272,17 @@ if (response.getAutorisation().equals(EXPIRE)) {
 }
 </pre></div></div></div>
 <div class="section">
-<h3><a name="TD0.3_:modifier_lautorisation_daccs_etou_le_statut_mdecin_traitant_DMP_via_TD0.3_ou_passer_en_mode_daccs__bris_de_glace_"></a>TD0.3 :&#xa0;modifier l&#x2019;autorisation d&#x2019;acc&#xe8;s et/ou le statut m&#xe9;decin traitant DMP (via TD0.3) ou passer en mode d&#x2019;acc&#xe8;s &#xab; bris de glace &#xbb;</h3>
-<p>Le LPS permet &#xe0; l&#x2019;utilisateur les actions suivantes.  * Ajouter une autorisation d&#x2019;acc&#xe8;s au DMP du patient ou passer en mode d&#x2019;acc&#xe8;s &#xab; bris de glace &#xbb;. Cf. DMP_0.3a.  * Supprimer une autorisation d&#x2019;acc&#xe8;s au DMP du patient. Cf. DMP_0.3b.  * Modifier le statut m&#xe9;decin traitant DMP. Cf. DMP_0.3c.</p>
+<h3><a name="TD0.3_:modifier_lautorisation_daccs_etou_le_statut_mdecin_traitant_DMP_ou_passer_en_mode_daccs__bris_de_glace_"></a>TD0.3 :&#xa0;modifier l&#x2019;autorisation d&#x2019;acc&#xe8;s et/ou le statut m&#xe9;decin traitant DMP ou passer en mode d&#x2019;acc&#xe8;s &#xab; bris de glace &#xbb;</h3>
+<p>Le LPS permet &#xe0; l&#x2019;utilisateur les actions suivantes.</p>
+
+<ul>
+  
+<li>Ajouter une autorisation d&#x2019;acc&#xe8;s au DMP du patient ou passer en mode d&#x2019;acc&#xe8;s &#xab; bris de glace &#xbb;. Cf. DMP_0.3a.</li>
+  
+<li>Supprimer une autorisation d&#x2019;acc&#xe8;s au DMP du patient. Cf. DMP_0.3b.</li>
+  
+<li>Modifier le statut m&#xe9;decin traitant DMP. Cf. DMP_0.3c.</li>
+</ul>
 <p>Exemple :&#xa0;</p>
 
 <div class="source">
@@ -277,7 +298,36 @@ client.td03AddAuthorization(context, new TD03Request(patient.getIns(), DMPCRole.
 <p>Non requis pour le DMP</p></div>
 <div class="section">
 <h3><a name="TD1.1_:_crer_un_DMP"></a>TD1.1 : cr&#xe9;er un DMP</h3>
-<p>Cette fonctionnalit&#xe9; permet de cr&#xe9;er le DMP d&#x2019;un patient. Le LPS : * contr&#xf4;le les pr&#xe9;requis &#xe0; la cr&#xe9;ation du DMP du patient (cf. RG_1010), * acquiert les donn&#xe9;es administratives du patient (cf. RG_1020), * acquiert le statut du DMP &#xe0; cr&#xe9;er (cf. RG_1030), * acquiert l&#x2019;adresse postale du patient (cf. RG_1040), * acquiert la date de naissance du patient (cf. RG_1050), * acquiert les donn&#xe9;es concernant le repr&#xe9;sentant l&#xe9;gal du patient (cf. RG_1060), * acquiert le consentement du patient &#xe0; la cr&#xe9;ation de son DMP (cf. RG_1070), * acquiert la demande d&#x2019;ajout du statut m&#xe9;decin traitant DMP (cf. RG_1080), * acquiert le consentement du patient &#xe0; l&#x2019;acc&#xe8;s &#xe0; son DMP en mode &#xab; bris de glace &#xbb; et en mode &#xab; centre de r&#xe9;gulation &#xbb; (cf. RG_1090), * cr&#xe9;e le DMP du patient (cf. RG_1100 et TD1.1), * ajoute statut m&#xe9;decin traitant DMP (cf. RG_1110 et TD0.3), * acquiert la demande d&#x2019;activation du compte internet du patient ou d&#xe9;clenche automatiquement l&#x2019;activation du compte internet du patient (cf. RG_1120), * G&#xe9;n&#xe9;re un &#xab; document d&#x2019;accus&#xe9; de cr&#xe9;ation du DMP &#xbb; en l&#x2019;absence d&#x2019;activation du compte internet du patient (cf. RG_1130).</p>
+<p>Cette fonctionnalit&#xe9; permet de cr&#xe9;er le DMP d&#x2019;un patient. Le LPS :</p>
+
+<ul>
+  
+<li>contr&#xf4;le les pr&#xe9;requis &#xe0; la cr&#xe9;ation du DMP du patient (cf. RG_1010),</li>
+  
+<li>acquiert les donn&#xe9;es administratives du patient (cf. RG_1020),</li>
+  
+<li>acquiert le statut du DMP &#xe0; cr&#xe9;er (cf. RG_1030),</li>
+  
+<li>acquiert l&#x2019;adresse postale du patient (cf. RG_1040),</li>
+  
+<li>acquiert la date de naissance du patient (cf. RG_1050),</li>
+  
+<li>acquiert les donn&#xe9;es concernant le repr&#xe9;sentant l&#xe9;gal du patient (cf. RG_1060),</li>
+  
+<li>acquiert le consentement du patient &#xe0; la cr&#xe9;ation de son DMP (cf. RG_1070),</li>
+  
+<li>acquiert la demande d&#x2019;ajout du statut m&#xe9;decin traitant DMP (cf. RG_1080),</li>
+  
+<li>acquiert le consentement du patient &#xe0; l&#x2019;acc&#xe8;s &#xe0; son DMP en mode &#xab; bris de glace &#xbb; et en mode &#xab; centre de r&#xe9;gulation &#xbb; (cf. RG_1090),</li>
+  
+<li>cr&#xe9;e le DMP du patient (cf. RG_1100 et TD1.1),</li>
+  
+<li>ajoute statut m&#xe9;decin traitant DMP (cf. RG_1110 et TD0.3),</li>
+  
+<li>acquiert la demande d&#x2019;activation du compte internet du patient ou d&#xe9;clenche automatiquement l&#x2019;activation du compte internet du patient (cf. RG_1120),</li>
+  
+<li>G&#xe9;n&#xe9;re un &#xab; document d&#x2019;accus&#xe9; de cr&#xe9;ation du DMP &#xbb; en l&#x2019;absence d&#x2019;activation du compte internet du patient (cf. RG_1130).</li>
+</ul>
 <p>Exemple : </p>
 
 <div class="source">
@@ -333,7 +383,50 @@ td11Request.setOppositionUrgence(true);
 
 final TD11Response td11Response = client.td11CreationDmp(context, td11Request);
 final DMPCPatient dmpPatient = td11Response.getPatient(); // patient retourn&#xe9; par le DMP
-Files.write(td11Response.getFormulairePatient(), new File(&quot;./documentDesSecrets.pdf&quot;)); // fichier PDF contenant le document des secrets
+Files.write(td11Response.getFormulairePatient(), new File(&quot;./documentAccuseCreation.pdf&quot;)); // fichier PDF contenant le document des secrets
+</pre></div></div></div>
+<div class="section">
+<h3><a name="TD1.5_:crer_ou_mettre__jour_le_compte_internet_du_patient"></a>TD1.5 :&#xa0;cr&#xe9;er ou mettre &#xe0; jour le compte internet du patient</h3>
+<p>La fonctionnalit&#xe9; DMP_1.5 permet :</p>
+
+<ul>
+  
+<li>de cr&#xe9;er le compte internet du patient afin que celui-ci puisse se connecter sur son DMP (DMP_1.5a),</li>
+  
+<li>d&#x2019;ajouter ou modifier ou supprimer un canal OTP (One Time Password - code d&#x2019;acc&#xe8;s &#xe0; usage unique) (DMP_1.5b),</li>
+  
+<li>de d&#xe9;bloquer le compte internet patient et de r&#xe9;g&#xe9;n&#xe9;rer les param&#xe8;tres de connexion du patient (DMP_1.5d).</li>
+</ul>
+<p>Exemple : </p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint linenums">DMPCPatient patient = createDMP();
+        
+// Cr&#xe9;ation de l'acc&#xe8;s internet
+TD15aRequest aRequest = new TD15aRequest();
+aRequest.setPatient(patient);
+aRequest.setEmail(&quot;laurent.foret@dev.coop&quot;);
+TD15aResponse response = client.td15aCreerAccesInternetPatient(context, aRequest);
+Files.write(response.getFormulairePatient(), new File(&quot;./target/documentDesSecrets.pdf&quot;));
+
+// Ajout d'un canal OTP
+TD15bRequest bRequest = new TD15bRequest();
+bRequest.setIns(patient.getIns());
+bRequest.setTelephone(&quot;0663285980&quot;);
+client.td15bAddCanalOTP(context, bRequest);
+
+// Suppression d'un canal OTP
+bRequest = new TD15bRequest();
+bRequest.setIns(patient.getIns());
+bRequest.setEmail(&quot;laurent.foret@dev.coop&quot;);
+client.td15bRemoveCanalOTP(context, bRequest);
+
+// D&#xe9;blocage acc&#xe8;s internet patient
+TD15cRequest dRequest = new TD15cRequest();
+dRequest.setPatient(patient);
+TD15cResponse response = client.td15dDeblocageAccesInternetPatient(context, dRequest);
+Files.write(response.getFormulairePatient(), new File(&quot;./target/documentDesSecrets15d110.pdf&quot;));
+
 </pre></div></div></div></div>
                   </div>
           </div>

@@ -82,7 +82,7 @@
           <ul class="breadcrumb">
         <li id="publishDate">Last Published: 2020-02-26<span class="divider">|</span>
 </li>
-          <li id="projectVersion">Version: 3.0.1-SNAPSHOT</li>
+          <li id="projectVersion">Version: 3.0.1</li>
           </ul>
         </div>
       </header>
@@ -90,11 +90,11 @@
 <section>
 <h2><a name="DMPC_Client_embedded"></a>DMPC Client embedded</h2><section>
 <h3><a name="Introduction"></a>Introduction</h3>
-<p>La DMPC-API est une API Java qui peut &#xc3;&#xaa;tre utilis&#xc3;&#xa9; dans un environnement <a class="externalLink" href="http://www.springframework.org">http://www.springframework.org</a>.</p></section><section>
+<p>La DMPC-API est une API Java qui peut &#xea;tre utilis&#xe9; dans un environnement <a class="externalLink" href="http://www.springframework.org">http://www.springframework.org</a>.</p></section><section>
 <h3><a name="Architecture"></a>Architecture</h3>
-<p>L'architecture du mode embedded peut &#xc3;&#xaa;tre repr&#xc3;&#xa9;sent&#xc3;&#xa9;e par ce sch&#xc3;&#xa9;ma :</p><figure><img src="../plantuml/embeddedArchi.png" alt="" /></figure></section><section>
+<p>L'architecture du mode embedded peut &#xea;tre repr&#xe9;sent&#xe9;e par ce sch&#xe9;ma :</p><figure><img src="../plantuml/embeddedArchi.png" alt="" /></figure></section><section>
 <h3><a name="Installation"></a>Installation</h3>
-<p>l'utilisation de cette API ne n&#xc3;&#xa9;cessite pas d'installation. Il suffit d'ajouter les d&#xc3;&#xa9;pendances adequates dans votre projet Maven.</p>
+<p>l'utilisation de cette API ne n&#xe9;cessite pas d'installation. Il suffit d'ajouter les d&#xe9;pendances adequates dans votre projet Maven.</p>
 <div class="source"><pre class="prettyprint linenums">&lt;dependency&gt;
     &lt;groupId&gt;fr.devcoop.dmpc&lt;/groupId&gt;
     &lt;artifactId&gt;dmpc-client-api&lt;/artifactId&gt;
@@ -109,10 +109,10 @@
     &lt;scope&gt;runtime&lt;/scope&gt;   
 &lt;/dependency&gt;
 </pre></div>
-<p>La javadoc est disponible ici :&#xc2;&#xa0;<a class="externalLink" href="http://devcoop.github.io/dmpc-public/apidocs/">http://devcoop.github.io/dmpc-public/apidocs/</a></p></section><section>
-<h3><a name="a.C3.83.E2.80.B0crire_un_code_d.27exemple"></a>&#xc3;&#x2030;crire un code d'exemple</h3><section>
+<p>La javadoc est disponible ici :&#xa0;<a class="externalLink" href="http://devcoop.github.io/dmpc-public/apidocs/">http://devcoop.github.io/dmpc-public/apidocs/</a></p></section><section>
+<h3><a name="a.C3.89crire_un_code_d.27exemple"></a>&#xc9;crire un code d'exemple</h3><section>
 <h4><a name="Initialisation_d.27un_DMPCClient"></a>Initialisation d'un DMPCClient</h4>
-<p>La DMPC-API&#xc2;&#xa0;est une application spring, pour obtenir un client DMP, il faut injecter dans l'application la classe impl&#xc3;&#xa9;mentant l'interface <code>DMPCClient</code> par les m&#xc3;&#xa9;canismes CDI de spring.</p>
+<p>La DMPC-API&#xa0;est une application spring, pour obtenir un client DMP, il faut injecter dans l'application la classe impl&#xe9;mentant l'interface <code>DMPCClient</code> par les m&#xe9;canismes CDI de spring.</p>
 <div class="source"><pre class="prettyprint linenums">@Component
 public class MonComposantDMP {
 
@@ -121,8 +121,8 @@ public class MonComposantDMP {
    
 }
 </pre></div></section><section>
-<h4><a name="Cr.C3.83.C2.A9ation_des_objets_m.C3.83.C2.A9tiers"></a>Cr&#xc3;&#xa9;ation des objets m&#xc3;&#xa9;tiers</h4>
-<p>Afin de transmettre les m&#xc3;&#xa9;tadonn&#xc3;&#xa9;es n&#xc3;&#xa9;cessaires aux DMP pendant les diff&#xc3;&#xa9;rentes transactions, la DMPC-API contient un mod&#xc3;&#xa8;le m&#xc3;&#xa9;tier dont les classes principales suivantes :</p>
+<h4><a name="Cr.C3.A9ation_des_objets_m.C3.A9tiers"></a>Cr&#xe9;ation des objets m&#xe9;tiers</h4>
+<p>Afin de transmettre les m&#xe9;tadonn&#xe9;es n&#xe9;cessaires aux DMP pendant les diff&#xe9;rentes transactions, la DMPC-API contient un mod&#xe8;le m&#xe9;tier dont les classes principales suivantes :</p>
 <ul>
 <li><code>DMPCCode</code></li>
 <li><code>DMPCPersonnelSante</code></li>
@@ -130,26 +130,26 @@ public class MonComposantDMP {
 <li><code>DMPCDocument</code></li>
 <li><code>DMPCSubmission</code></li></ul><section>
 <h5><a name="DMPCCode"></a>DMPCCode</h5>
-<p>Un <code>DMPCCode</code> est la structure de base pour toute codification. Une fois un <code>DMPCClient</code> initialis&#xc3;&#xa9;, il est possible d'obtenir toutes les nomenclatures standard depuis l'enum <code>DMPCCode.ASIPJeuxValeurs</code>.</p>
-<p>Exemple de r&#xc3;&#xa9;cup&#xc3;&#xa9;ration d'un DMPCCode :</p>
-<div class="source"><pre class="prettyprint linenums">// Je m'int&#xc3;&#xa9;resse &#xc3;&#xa0; la nomenclature SubjectRole
+<p>Un <code>DMPCCode</code> est la structure de base pour toute codification. Une fois un <code>DMPCClient</code> initialis&#xe9;, il est possible d'obtenir toutes les nomenclatures standard depuis l'enum <code>DMPCCode.ASIPJeuxValeurs</code>.</p>
+<p>Exemple de r&#xe9;cup&#xe9;ration d'un DMPCCode :</p>
+<div class="source"><pre class="prettyprint linenums">// Je m'int&#xe9;resse &#xe0; la nomenclature SubjectRole
 
 List&lt;DMPCCode&gt; roles = client.getCodesFor(DMPCCode.ASIPJeuxValeurs.SUBJECT_ROLE);
 // liste de tous les codes SubjetRole
 for (DMPCCode role : roles) {
     System.out.println(&quot;role :&quot; + role);
 }
-// le r&#xc3;&#xb4;le &quot;m&#xc3;&#xa9;decin&quot; est le 4&#xc3;&#xa8;me dans la nomenclature actuelle
+// le r&#xf4;le &quot;m&#xe9;decin&quot; est le 4&#xe8;me dans la nomenclature actuelle
 
-assert &quot;m&#xc3;&#xa9;decin&quot;.equals(roles.get(3).getCode())
+assert &quot;m&#xe9;decin&quot;.equals(roles.get(3).getCode())
 
 </pre></div></section><section>
 <h5><a name="DMPCPersonnelSante"></a>DMPCPersonnelSante</h5>
-<p>Exemple d'initialisation d'un Personnel de Sant&#xc3;&#xa9;</p>
+<p>Exemple d'initialisation d'un Personnel de Sant&#xe9;</p>
 <div class="source"><pre class="prettyprint linenums">DMPCPersonnelSante ps1 = new DMPCPersonnelSante(123456, Durand, Pierre);
-ps1.setRole(&quot;M&#xc3;&#xa9;decin&quot;); 
-ps1.setSpecialite(&quot;G15_10/SM30&quot;); // c'est le 34&#xc3;&#xa8;me code : client.getCodesFor(DMPCCode.ASIPJeuxValeurs.AUTHOR_SPECIALITY).get(33).getCode() 
-ps1.setSecteurActivite(&quot;Devcoop Bureau de L&#xc3;&#xa9;ognan&quot;); 
+ps1.setRole(&quot;M&#xe9;decin&quot;); 
+ps1.setSpecialite(&quot;G15_10/SM30&quot;); // c'est le 34&#xe8;me code : client.getCodesFor(DMPCCode.ASIPJeuxValeurs.AUTHOR_SPECIALITY).get(33).getCode() 
+ps1.setSecteurActivite(&quot;Devcoop Bureau de L&#xe9;ognan&quot;); 
 ps1.getStructureSante().setNom(&quot;SA43&quot;);  // Chercher dans l'annuaire de l'ASIP la valeur correspondant au certificat 
 </pre></div></section><section>
 <h5><a name="DMPCPatient"></a>DMPCPatient</h5>
@@ -168,7 +168,7 @@ patient.setDateDeNaissance(&quot;20131212&quot;);
 document.setClassCode(client.getCodesFor(DMPCCode.ASIPJeuxValeurs.CLASS_CODE).get(0).getCode());
 document.addConfidentiality(client.getCodesFor(DMPCCode.ASIPJeuxValeurs.CONFIDENTIALITY_CODE).get(0).getCode());
 document.setComments(&quot;commentDocument&quot;);
-document.addEvent(new DMPCCode(&quot;B18&quot;, &quot;2.16.840.1.113883.6.3&quot;, &quot;H&#xc3;&#xa9;patite virale chronique&quot;));
+document.addEvent(new DMPCCode(&quot;B18&quot;, &quot;2.16.840.1.113883.6.3&quot;, &quot;H&#xe9;patite virale chronique&quot;));
 document.setPracticeSetting(client.getCodesFor(DMPCCode.ASIPJeuxValeurs.PRACTICE_SETTING_CODE).get(0).getCode());
 document.setServiceStartTime(&quot;20121020174600&quot;);
 document.setServiceStopTime(&quot;20121020194600&quot;);
@@ -189,9 +189,9 @@ template.setContentType(client.getCodesFor(DMPCCode.ASIPJeuxValeurs.CONTENT_TYPE
 template.setTitle(&quot;Soumission&quot;);
 </pre></div></section></section><section>
 <h4><a name="Initialisation_du_contexte"></a>Initialisation du contexte </h4>
-<p>L'API &#xc3;&#xa9;tant stateless un contexte doit &#xc3;&#xaa;tre rappel&#xc3;&#xa9; pour chaque transaction vers le DMP. Un contexte peut &#xc3;&#xaa;tre d&#xc3;&#xa9;finit de la mani&#xc3;&#xa8;re suivante :</p>
+<p>L'API &#xe9;tant stateless un contexte doit &#xea;tre rappel&#xe9; pour chaque transaction vers le DMP. Un contexte peut &#xea;tre d&#xe9;finit de la mani&#xe8;re suivante :</p>
 <div class="source"><pre class="prettyprint linenums">DMPCContext context = new DMPCContext();
-DMPCPersonnelSante ps1 = // initialisation d'un personnel de sant&#xc3;&#xa9; responsable de la transaction vers le DMP
+DMPCPersonnelSante ps1 = // initialisation d'un personnel de sant&#xe9; responsable de la transaction vers le DMP
 context.setAuthor(ps1);
 </pre></div>
 <p>Exemple d'utilisation du contexte dans le cadre d'un test d'existence</p>
@@ -200,157 +200,157 @@ client.td02Exist(context, new TD02Request(patient));
         
 </pre></div><section>
 <h5><a name="Transactions"></a>Transactions</h5>
-<p>L'ensemble des transactions support&#xc3;&#xa9;es est d&#xc3;&#xa9;fini dans l'interface <code>DMPCClient</code> : <a class="externalLink" href="http://devcoop.github.io/dmpc-public/apidocs/fr/devcoop/dmpc/client/DMPCClient.html">http://devcoop.github.io/dmpc-public/apidocs/fr/devcoop/dmpc/client/DMPCClient.html</a></p>
+<p>L'ensemble des transactions support&#xe9;es est d&#xe9;fini dans l'interface <code>DMPCClient</code> : <a class="externalLink" href="http://devcoop.github.io/dmpc-public/apidocs/fr/devcoop/dmpc/client/DMPCClient.html">http://devcoop.github.io/dmpc-public/apidocs/fr/devcoop/dmpc/client/DMPCClient.html</a></p>
 <div class="source"><pre class="prettyprint linenums">package fr.devcoop.dmpc.client;
 
 import fr.devcoop.dmpc.client.model.DMPCCode;
 import java.util.List;
 
 /**
- * Point d'entr&#xc3;&#xa9;e d'un client vers le proxy DMP. Toute requ&#xc3;&#xaa;te sur ce proxy sera
- * interpr&#xc3;&#xa9;t&#xc3;&#xa9;e et transmise au DMP par la mise en place des diff&#xc3;&#xa9;rentes
- * exigences du [DMP1-DSFT] notamment la TD0.1 &#xc2;&#xa7;6.2.
+ * Point d'entr&#xe9;e d'un client vers le proxy DMP. Toute requ&#xea;te sur ce proxy sera
+ * interpr&#xe9;t&#xe9;e et transmise au DMP par la mise en place des diff&#xe9;rentes
+ * exigences du [DMP1-DSFT] notamment la TD0.1 &#xa7;6.2.
  *
  * &lt;p&gt;
  * Le proxy a donc pour but de rendre transparent la mise en place de tous les
- * m&#xc3;&#xa9;canismes complexes induits par la s&#xc3;&#xa9;curisation des acc&#xc3;&#xa8;s et le respect des
- * standards exig&#xc3;&#xa9;s par le Cadre d'Int&#xc3;&#xa9;rop&#xc3;&#xa9;rabilit&#xc3;&#xa9; [CI-SIS].
+ * m&#xe9;canismes complexes induits par la s&#xe9;curisation des acc&#xe8;s et le respect des
+ * standards exig&#xe9;s par le Cadre d'Int&#xe9;rop&#xe9;rabilit&#xe9; [CI-SIS].
  *
  * @author lforet
  */
 public interface DMPCClient {
 
     /**
-     * Transaction d&#xc3;&#xa9;crite dans [DMP1-DSFT] &#xc2;&#xa7;6.4 : Test l'existence du patient
+     * Transaction d&#xe9;crite dans [DMP1-DSFT] &#xa7;6.4 : Test l'existence du patient
      * dans le DMP,
      *
-     * @param context requis pour acc&#xc3;&#xa9;der &#xc3;&#xa0; la fonction
-     * @param request insc doit &#xc3;&#xaa;tre renseign&#xc3;&#xa9;
-     * @return le patient retrouv&#xc3;&#xa9; dans le DMP permet de mettre en place
-     * l'identitoVigilance d&#xc3;&#xa9;crite dans [DMP1-DSFT] &#xc2;&#xa7;7.1.1.3 le role de l'auteur
-     * (l'&#xc3;&#xa9;tablissement de Sant&#xc3;&#xa9;) si autoris&#xc3;&#xa9; nul sinon (cf td03)
-     * @throws DMPCProxyException si probl&#xc3;&#xa8;me technique ou fonctionnel
+     * @param context requis pour acc&#xe9;der &#xe0; la fonction
+     * @param request insc doit &#xea;tre renseign&#xe9;
+     * @return le patient retrouv&#xe9; dans le DMP permet de mettre en place
+     * l'identitoVigilance d&#xe9;crite dans [DMP1-DSFT] &#xa7;7.1.1.3 le role de l'auteur
+     * (l'&#xe9;tablissement de Sant&#xe9;) si autoris&#xe9; nul sinon (cf td03)
+     * @throws DMPCProxyException si probl&#xe8;me technique ou fonctionnel
      */
     public TD02Response td02Exist(DMPCContext context, TD02Request request) throws DMPCProxyException;
 
     /**
-     * Transaction d&#xc3;&#xa9;crite dans [DMP1-DSFT] &#xc2;&#xa7;6.5 : Demande d'ajout
-     * d'autorisation d'acc&#xc3;&#xa8;s
+     * Transaction d&#xe9;crite dans [DMP1-DSFT] &#xa7;6.5 : Demande d'ajout
+     * d'autorisation d'acc&#xe8;s
      *
-     * @param context requis pour acc&#xc3;&#xa9;der &#xc3;&#xa0; la fonction
-     * @param request le role doit &#xc3;&#xaa;tre renseign&#xc3;&#xa9;
-     * @return une r&#xc3;&#xa9;ponse vide
-     * @throws DMPCProxyException si probl&#xc3;&#xa8;me technique ou fonctionnel.
+     * @param context requis pour acc&#xe9;der &#xe0; la fonction
+     * @param request le role doit &#xea;tre renseign&#xe9;
+     * @return une r&#xe9;ponse vide
+     * @throws DMPCProxyException si probl&#xe8;me technique ou fonctionnel.
      */
     public TD03Response td03AddAuthorization(DMPCContext context, TD03Request request) throws DMPCProxyException;
 
     /**
-     * Transaction d&#xc3;&#xa9;crite dans [DMP1-DSFT] &#xc2;&#xa7;6.5 : Demande de suppression
-     * d'autorisation d'acc&#xc3;&#xa8;s
+     * Transaction d&#xe9;crite dans [DMP1-DSFT] &#xa7;6.5 : Demande de suppression
+     * d'autorisation d'acc&#xe8;s
      *
-     * @param context requis pour acc&#xc3;&#xa9;der &#xc3;&#xa0; la fonction
-     * @param request le role doit &#xc3;&#xaa;tre renseign&#xc3;&#xa9;
-     * @return une r&#xc3;&#xa9;ponse vide
-     * @throws DMPCProxyException si probl&#xc3;&#xa8;me technique ou fonctionnel.
+     * @param context requis pour acc&#xe9;der &#xe0; la fonction
+     * @param request le role doit &#xea;tre renseign&#xe9;
+     * @return une r&#xe9;ponse vide
+     * @throws DMPCProxyException si probl&#xe8;me technique ou fonctionnel.
      */
     public TD03Response td03RemoveAuthorization(DMPCContext context, TD03Request request) throws DMPCProxyException;
 
     /**
-     * Transaction d&#xc3;&#xa9;crite dans [DMP1-DSFT] &#xc2;&#xa7;8.2 : Cr&#xc3;&#xa9;ation d&#xe2;&#x20ac;&#x2122;un DMP
+     * Transaction d&#xe9;crite dans [DMP1-DSFT] &#xa7;8.2 : Cr&#xe9;ation d&#x2019;un DMP
      *
-     * @param context requis pour acc&#xc3;&#xa9;der &#xc3;&#xa0; la fonction
-     * @param request le patient &#xc3;&#xa0; cr&#xc3;&#xa9;er doit &#xc3;&#xaa;tre renseign&#xc3;&#xa9;
-     * @return une r&#xc3;&#xa9;ponse contenant le patient sauvegard&#xc3;&#xa9;
-     * @throws DMPCProxyException si probl&#xc3;&#xa8;me technique ou fonctionnel.
+     * @param context requis pour acc&#xe9;der &#xe0; la fonction
+     * @param request le patient &#xe0; cr&#xe9;er doit &#xea;tre renseign&#xe9;
+     * @return une r&#xe9;ponse contenant le patient sauvegard&#xe9;
+     * @throws DMPCProxyException si probl&#xe8;me technique ou fonctionnel.
      */
     public TD11Response td11CreationDmp(DMPCContext context, TD11Request request) throws DMPCProxyException;
 
     /**
-     * Transaction d&#xc3;&#xa9;crite dans [DMP1-DSFT] &#xc2;&#xa7;8.6 : Acc&#xc3;&#xa8;s Internet du Patient
+     * Transaction d&#xe9;crite dans [DMP1-DSFT] &#xa7;8.6 : Acc&#xe8;s Internet du Patient
      *
-     * @param context requis pour acc&#xc3;&#xa9;der &#xc3;&#xa0; la fonction
+     * @param context requis pour acc&#xe9;der &#xe0; la fonction
      * @param request contenant l'information patient et un canal OTP (One Time
      * Password)
      * @return les infos de connexions ainsi que le formulaire patient.
-     * @throws DMPCProxyException si probl&#xc3;&#xa8;me technique ou fonctionnel.
+     * @throws DMPCProxyException si probl&#xe8;me technique ou fonctionnel.
      */
     public TD15aResponse td15aCreerAccesInternetPatient(DMPCContext context, TD15aRequest request) throws DMPCProxyException;
 
     /**
-     * Transaction d&#xc3;&#xa9;crite dans [DMP1-DSFT] &#xc2;&#xa7;8.6.4 : Ajout de canal Otp
+     * Transaction d&#xe9;crite dans [DMP1-DSFT] &#xa7;8.6.4 : Ajout de canal Otp
      *
-     * @param context requis pour acc&#xc3;&#xa9;der &#xc3;&#xa0; la fonction
+     * @param context requis pour acc&#xe9;der &#xe0; la fonction
      * @param request contenant l'information patient et un canal OTP (One Time
      * Password)
-     * @return une r&#xc3;&#xa9;ponse vide
-     * @throws DMPCProxyException si probl&#xc3;&#xa8;me technique ou fonctionnel.
+     * @return une r&#xe9;ponse vide
+     * @throws DMPCProxyException si probl&#xe8;me technique ou fonctionnel.
      */
     public TD15bResponse td15bAddCanalOTP(DMPCContext context, TD15bRequest request) throws DMPCProxyException;
 
     /**
-     * Transaction d&#xc3;&#xa9;crite dans [DMP1-DSFT] &#xc2;&#xa7;8.6.4 : Ajout de canal OTP
+     * Transaction d&#xe9;crite dans [DMP1-DSFT] &#xa7;8.6.4 : Ajout de canal OTP
      *
-     * @param context requis pour acc&#xc3;&#xa9;der &#xc3;&#xa0; la fonction
+     * @param context requis pour acc&#xe9;der &#xe0; la fonction
      * @param request contenant l'information patient et un canal OTP (One Time
      * Password)
-     * @return une r&#xc3;&#xa9;ponse vide
-     * @throws DMPCProxyException si probl&#xc3;&#xa8;me technique ou fonctionnel.
+     * @return une r&#xe9;ponse vide
+     * @throws DMPCProxyException si probl&#xe8;me technique ou fonctionnel.
      */
     public TD15bResponse td15bRemoveCanalOTP(DMPCContext context, TD15bRequest request) throws DMPCProxyException;
 
     /**
-     * Transaction d&#xc3;&#xa9;crite dans [DMP1-DSFT] &#xc2;&#xa7;8.6.6 : D&#xc3;&#xa9;blocage du compte
-     * internet ou mise &#xc3;&#xa0; jour des codes internet.
+     * Transaction d&#xe9;crite dans [DMP1-DSFT] &#xa7;8.6.6 : D&#xe9;blocage du compte
+     * internet ou mise &#xe0; jour des codes internet.
      *
-     * @param context requis pour acc&#xc3;&#xa9;der &#xc3;&#xa0; la fonction
+     * @param context requis pour acc&#xe9;der &#xe0; la fonction
      * @param request contenant l'information patient et un canal OTP (One Time
      * Password)
      * @return les infos de connexions ainsi que le formulaire patient.
-     * @throws DMPCProxyException si probl&#xc3;&#xa8;me technique ou fonctionnel.
+     * @throws DMPCProxyException si probl&#xe8;me technique ou fonctionnel.
      */
     public TD15cResponse td15dDeblocageAccesInternetPatient(DMPCContext context, TD15cRequest request) throws DMPCProxyException;
 
     /**
-     * Transaction d&#xc3;&#xa9;crite dans [DMP1-DSFT] &#xc2;&#xa7;9.2 : Soumission de documents
+     * Transaction d&#xe9;crite dans [DMP1-DSFT] &#xa7;9.2 : Soumission de documents
      *
-     * Pr&#xc3;&#xa9;requis avoir obtenu l'autorisation d'acc&#xc3;&#xa8;s
+     * Pr&#xe9;requis avoir obtenu l'autorisation d'acc&#xe8;s
      *
-     * @param context requis pour acc&#xc3;&#xa9;der &#xc3;&#xa0; la fonction
+     * @param context requis pour acc&#xe9;der &#xe0; la fonction
      * @param request contient une soumission qui contient des documents pour un
-     * m&#xc3;&#xaa;me patient.
-     * @return la soumission compl&#xc3;&#xa9;t&#xc3;&#xa9; par des informations g&#xc3;&#xa9;r&#xc3;&#xa9;s par le proxy.
-     * @throws DMPCProxyException si probl&#xc3;&#xa8;me technique ou fonctionnel.
+     * m&#xea;me patient.
+     * @return la soumission compl&#xe9;t&#xe9; par des informations g&#xe9;r&#xe9;s par le proxy.
+     * @throws DMPCProxyException si probl&#xe8;me technique ou fonctionnel.
      */
     public TD21Response td21SubmitDocuments(DMPCContext context, TD21Request request) throws DMPCProxyException;
 
     /**
-     * Transaction d&#xc3;&#xa9;crite dans [DMP1-DSFT] &#xc2;&#xa7;9.4.4 : D&#xc3;&#xa9;publication de documents
+     * Transaction d&#xe9;crite dans [DMP1-DSFT] &#xa7;9.4.4 : D&#xe9;publication de documents
      *
-     * Pr&#xc3;&#xa9;requis avoir obtenu l'autorisation d'acc&#xc3;&#xa8;s
+     * Pr&#xe9;requis avoir obtenu l'autorisation d'acc&#xe8;s
      *
-     * @param context requis pour acc&#xc3;&#xa9;der &#xc3;&#xa0; la fonction
-     * @param request contient l'uuid du document &#xc3;&#xa0; d&#xc3;&#xa9;publier
+     * @param context requis pour acc&#xe9;der &#xe0; la fonction
+     * @param request contient l'uuid du document &#xe0; d&#xe9;publier
      * @return vide
-     * @throws DMPCProxyException si probl&#xc3;&#xa8;me technique ou fonctionnel.
+     * @throws DMPCProxyException si probl&#xe8;me technique ou fonctionnel.
      */
     public TD33CResponse td33cUnpublished(DMPCContext context, TD33CRequest request) throws DMPCProxyException;
 
     /**
-     * Service permmettant de r&#xc3;&#xa9;cup&#xc3;&#xa9;rer les diff&#xc3;&#xa9;rents codes possible pour
-     * l'ensemble des jeux de valeurs (nomenclatures) utilis&#xc3;&#xa9;s dans le cadre du
+     * Service permmettant de r&#xe9;cup&#xe9;rer les diff&#xe9;rents codes possible pour
+     * l'ensemble des jeux de valeurs (nomenclatures) utilis&#xe9;s dans le cadre du
      * DMP.
      *
      * @see DMPCCode.ASIPJeuxValeurs
-     * @param jeuxValeurs type de jeux de valeur souhait&#xc3;&#xa9;
-     * @return la liste des codes correspondant au jeux de valeurs souhait&#xc3;&#xa9;s
-     * @throws DMPCProxyException si probl&#xc3;&#xa8;me technique ou fonctionnel
+     * @param jeuxValeurs type de jeux de valeur souhait&#xe9;
+     * @return la liste des codes correspondant au jeux de valeurs souhait&#xe9;s
+     * @throws DMPCProxyException si probl&#xe8;me technique ou fonctionnel
      */
     public List&lt;DMPCCode&gt; getCodesFor(DMPCCode.ASIPJeuxValeurs jeuxValeurs) throws DMPCProxyException;
 }
 
 </pre></div></section></section></section><section>
 <h3><a name="Exemple_complet"></a>Exemple complet</h3>
-<p>Pour obtenir un exemple complet, vous pouvez demander &#xc3;&#xa0; dmp@devcoop.fr un acc&#xc3;&#xa8;s au projet de d&#xc3;&#xa9;monstration https://bitbucket.org/devcoop/dmpc-demo</p></section></section>
+<p>Pour obtenir un exemple complet, vous pouvez demander &#xe0; dmp@devcoop.fr un acc&#xe8;s au projet de d&#xe9;monstration https://bitbucket.org/devcoop/dmpc-demo</p></section></section>
         </main>
     </div>
     <hr/>

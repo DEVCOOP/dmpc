@@ -82,22 +82,22 @@
           <ul class="breadcrumb">
         <li id="publishDate">Last Published: 2020-02-26<span class="divider">|</span>
 </li>
-          <li id="projectVersion">Version: 3.0.1-SNAPSHOT</li>
+          <li id="projectVersion">Version: 3.0.1</li>
           </ul>
         </div>
       </header>
         <main id="bodyColumn" >
 <section>
 <h2><a name="Structuration_minimale"></a>Structuration minimale</h2>
-<p>La DMPC-API prend en charge la soumission de document &#xc3;&#xa0; structuration minimale. Il s'agit du format par d&#xc3;&#xa9;faut exig&#xc3;&#xa9; par le DSFT, il contient les m&#xc3;&#xa9;tadonn&#xc3;&#xa9;es de base permettant la cr&#xc3;&#xa9;ation d'un DMPCDocument et le contenu binaire.</p>
-<p>Un exemple de cr&#xc3;&#xa9;ation de document &#xc3;&#xa0; structuration minimale est:</p>
+<p>La DMPC-API prend en charge la soumission de document &#xe0; structuration minimale. Il s'agit du format par d&#xe9;faut exig&#xe9; par le DSFT, il contient les m&#xe9;tadonn&#xe9;es de base permettant la cr&#xe9;ation d'un DMPCDocument et le contenu binaire.</p>
+<p>Un exemple de cr&#xe9;ation de document &#xe0; structuration minimale est:</p>
 <div class="source"><pre class="prettyprint linenums">
 DMPCDocument document = new DMPCDocument();
-// ajout des m&#xc3;&#xa9;tadonn&#xc3;&#xa9;es 
+// ajout des m&#xe9;tadonn&#xe9;es 
 document.setClassCode(client.getCodesFor(DMPCCode.ASIPJeuxValeurs.CLASS_CODE).get(0).getCode());
 document.addConfidentiality(client.getCodesFor(DMPCCode.ASIPJeuxValeurs.CONFIDENTIALITY_CODE).get(0).getCode());
 document.setComments(&quot;commentDocument&quot;);
-document.addEvent(new DMPCCode(&quot;B18&quot;, &quot;2.16.840.1.113883.6.3&quot;, &quot;H&#xc3;&#xa9;patite virale chronique&quot;));
+document.addEvent(new DMPCCode(&quot;B18&quot;, &quot;2.16.840.1.113883.6.3&quot;, &quot;H&#xe9;patite virale chronique&quot;));
 document.setPracticeSetting(client.getCodesFor(DMPCCode.ASIPJeuxValeurs.PRACTICE_SETTING_CODE).get(0).getCode());
 document.setServiceStartTime(&quot;20171020174600&quot;);
 document.setServiceStopTime(&quot;20171020194600&quot;);

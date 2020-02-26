@@ -82,72 +82,72 @@
           <ul class="breadcrumb">
         <li id="publishDate">Last Published: 2020-02-26<span class="divider">|</span>
 </li>
-          <li id="projectVersion">Version: 3.0.1-SNAPSHOT</li>
+          <li id="projectVersion">Version: 3.0.1</li>
           </ul>
         </div>
       </header>
         <main id="bodyColumn" >
 <section>
 <h2><a name="PreHomologation"></a>PreHomologation</h2>
-<p>Ce document contient l'ensemble des informations importantes concernant la preHomologation et la pr&#xc3;&#xa9;paration &#xc3;&#xa0; l'homologation.</p><section>
+<p>Ce document contient l'ensemble des informations importantes concernant la preHomologation et la pr&#xe9;paration &#xe0; l'homologation.</p><section>
 <h3><a name="Configuration_du_serveur_DMP"></a>Configuration du serveur DMP </h3>
-<p>Je reprends ici, les informations donn&#xc3;&#xa9;es par l'ASIP :</p><section>
-<h4><a name="URLs_d.27acc.C3.83.C2.A8s"></a>URLs d'acc&#xc3;&#xa8;s </h4>
+<p>Je reprends ici, les informations donn&#xe9;es par l'ASIP :</p><section>
+<h4><a name="URLs_d.27acc.C3.A8s"></a>URLs d'acc&#xe8;s </h4>
 <ul>
 <li>Racine des Web Services : <a class="externalLink" href="https://dev17.lps.dmp.gouv.fr/si-dmp-server/v1/services">https://dev17.lps.dmp.gouv.fr/si-dmp-server/v1/services</a></li>
 <li>Racine du WebPS : <a class="externalLink" href="https://dev17.ps.dmp.gouv.fr">https://dev17.ps.dmp.gouv.fr</a></li></ul></section><section>
-<h4><a name="Caract.C3.83.C2.A9ristiques_de_l.27environnement"></a>Caract&#xc3;&#xa9;ristiques de l'environnement</h4>
+<h4><a name="Caract.C3.A9ristiques_de_l.27environnement"></a>Caract&#xe9;ristiques de l'environnement</h4>
 <ul>
-<li>Serveur DMP : version 1.0.6-11 (identique &#xc3;&#xa0; la production)</li>
-<li>Num&#xc3;&#xa9;ro d'homologation temporaire &#xc3;&#xa0; utiliser:
+<li>Serveur DMP : version 1.0.6-11 (identique &#xe0; la production)</li>
+<li>Num&#xe9;ro d'homologation temporaire &#xe0; utiliser:
 <div class="source"><pre class="prettyprint linenums">LPS_Nom=HEMADIALYSE
 LPS_Version=4
 LPS_ID_HOMOLOGATION_DMP=EMA-634256-tmp1
-LPS_ID=&lt;Num&#xc3;&#xa9;ro de s&#xc3;&#xa9;rie ou identifiant de l&#xe2;&#x20ac;&#x2122;installation du logiciel&gt;(obligatoire dans cette version du DMP)
+LPS_ID=&lt;Num&#xe9;ro de s&#xe9;rie ou identifiant de l&#x2019;installation du logiciel&gt;(obligatoire dans cette version du DMP)
 </pre></div></li></ul></section><section>
-<h4><a name="Acc.C3.83.C2.A8s_WebPS_:"></a>Acc&#xc3;&#xa8;s WebPS :</h4>
+<h4><a name="Acc.C3.A8s_WebPS_:"></a>Acc&#xe8;s WebPS :</h4>
 <ul>
-<li>N&#xc3;&#xa9;cessite d'installer une cryptolib (version conseill&#xc3;&#xa9;e : 3.06 sous Windows) : disponible sur site &#xc3;&#xa9;diteur ASIP-CPS</li>
-<li>N&#xc3;&#xa9;cessite une carte CPS de test (non expir&#xc3;&#xa9;e, non oppos&#xc3;&#xa9;e) pour s'authentifier (sans d&#xc3;&#xa9;claration pr&#xc3;&#xa9;alable)
-<p>Peut &#xc3;&#xaa;tre utile pour :</p>
+<li>N&#xe9;cessite d'installer une cryptolib (version conseill&#xe9;e : 3.06 sous Windows) : disponible sur site &#xe9;diteur ASIP-CPS</li>
+<li>N&#xe9;cessite une carte CPS de test (non expir&#xe9;e, non oppos&#xe9;e) pour s'authentifier (sans d&#xe9;claration pr&#xe9;alable)
+<p>Peut &#xea;tre utile pour :</p>
 <ul>
-<li>Tester l'acc&#xc3;&#xa8;s contextuel TD 0.9,</li>
-<li>Cr&#xc3;&#xa9;er des DMP (si profil non impl&#xc3;&#xa9;ment&#xc3;&#xa9;),</li>
+<li>Tester l'acc&#xe8;s contextuel TD 0.9,</li>
+<li>Cr&#xe9;er des DMP (si profil non impl&#xe9;ment&#xe9;),</li>
 <li>S'autoriser sur les DMP existants (tant que TD0.3 non fonctionnelle),</li>
 <li>Fermer des DMP, ...</li></ul></li></ul></section></section><section>
 <h3><a name="Configuration_du_proxyDMPC"></a><a name="Configuration">Configuration</a> du proxyDMPC</h3>
-<p>Pour suivre les caract&#xc3;&#xa9;ristiques de l'environnement de prehomologation, j'ai d&#xc3;&#xa9;fini une configuration <code>dmpc-dev17.properties</code>: </p>
-<div class="source"><pre class="prettyprint linenums"># Num&#xc3;&#xa9;ro d'homologation donn&#xc3;&#xa9; par l'ASIP
+<p>Pour suivre les caract&#xe9;ristiques de l'environnement de prehomologation, j'ai d&#xe9;fini une configuration <code>dmpc-dev17.properties</code>: </p>
+<div class="source"><pre class="prettyprint linenums"># Num&#xe9;ro d'homologation donn&#xe9; par l'ASIP
 dmpc.lpsInfo.homologationId=EMA-634256-tmp1
 
-# Version du logiciel homologu&#xc3;&#xa9;
+# Version du logiciel homologu&#xe9;
 dmpc.lpsInfo.version=4
 
-# Nom du logiciel homlogu&#xc3;&#xa9;
+# Nom du logiciel homlogu&#xe9;
 dmpc.lpsInfo.nom=HEMADIALYSE
 
-# Identifiant (OID) AFNOR de la soci&#xc3;&#xa9;t&#xc3;&#xa9; 
+# Identifiant (OID) AFNOR de la soci&#xe9;t&#xe9; 
 # 1.2.250.1 est l'OID de l'AFNOR
-# 1.2.250.1.266 est l'OID d'h&#xc3;&#xa9;madialyse
-# 1.2.250.1.266.1 est l'OID correspondant &#xc3;&#xa0; la DMPC pour h&#xc3;&#xa9;madialyse
+# 1.2.250.1.266 est l'OID d'h&#xe9;madialyse
+# 1.2.250.1.266.1 est l'OID correspondant &#xe0; la DMPC pour h&#xe9;madialyse
 dmpc.source.idRoot=1.2.250.1.266.1
 
-# Identifiant unique de l'instance du logiciel install&#xc3;&#xa9;
-# (Doit correspondre &#xc3;&#xa0; l'identifiant unique de l'installation du logiciel h&#xc3;&#xa9;madialyse 
-#  install&#xc3;&#xa9;, doit &#xc3;&#xaa;tre chang&#xc3;&#xa9; lors de l'installation) 
+# Identifiant unique de l'instance du logiciel install&#xe9;
+# (Doit correspondre &#xe0; l'identifiant unique de l'installation du logiciel h&#xe9;madialyse 
+#  install&#xe9;, doit &#xea;tre chang&#xe9; lors de l'installation) 
 dmpc.source.idExtension=123456
 
-#Num&#xc3;&#xa9;ro de s&#xc3;&#xa9;rie ou identifiant de l'installation du logiciel 
-# (ici est concat&#xc3;&#xa9;n&#xc3;&#xa9; l'OID d'h&#xc3;&#xa9;madialyse avec l'identifiant unique de l'installation)
+#Num&#xe9;ro de s&#xe9;rie ou identifiant de l'installation du logiciel 
+# (ici est concat&#xe9;n&#xe9; l'OID d'h&#xe9;madialyse avec l'identifiant unique de l'installation)
 dmpc.lpsInfo.id=1.2.250.1.266.1.123456
 
-# chemin vers le keystore smime pour la signature, g&#xc3;&#xa9;n&#xc3;&#xa9;r&#xc3;&#xa9; par CleoCPS et valid&#xc3;&#xa9; par le GIP CPS.
+# chemin vers le keystore smime pour la signature, g&#xe9;n&#xe9;r&#xe9; par CleoCPS et valid&#xe9; par le GIP CPS.
 dmpc.smime.p12.path=./src/test/resources/Certificat_SMIME_1_2300169110.p12
 
 # mot de passe du certificat smime
 dmpc.smime.p12.password=hemadialyse
 
-# chemin vers le keystore ssl pour connexion tls, g&#xc3;&#xa9;n&#xc3;&#xa9;r&#xc3;&#xa9; par CleoCPS et valid&#xc3;&#xa9; par le GIP CPS.
+# chemin vers le keystore ssl pour connexion tls, g&#xe9;n&#xe9;r&#xe9; par CleoCPS et valid&#xe9; par le GIP CPS.
 dmpc.ssl.p12.path=./src/test/resources/Certificat_SSL_1_2300169110.p12
 
 # mot de passe du certificat smime
@@ -167,22 +167,22 @@ dmpc.proxy.password=hemadialyse
         -proxyURL http://127.0.0.1:9999/dmpcProxy -springContext META-INF/spring/dmpc-dev17.xml
 </pre></div>
 <dl>
-<dt>En cours de r&#xc3;&#xa9;alisation</dt>
-<dd>vous permettre d'&#xc3;&#xa9;diter ce fichier de configuration et vous permettre ainsi de configurer vos diff&#xc3;&#xa9;rents environnements de production.</dd></dl></section><section>
+<dt>En cours de r&#xe9;alisation</dt>
+<dd>vous permettre d'&#xe9;diter ce fichier de configuration et vous permettre ainsi de configurer vos diff&#xe9;rents environnements de production.</dd></dl></section><section>
 <h3><a name="Exigences_de_l.27ASIP_pour_la_prehomologation_et_l.27homologation"></a>Exigences de l'ASIP pour la prehomologation et l'homologation </h3>
-<p>Les sc&#xc3;&#xa9;narii de test (<code>DMP1_LPS_TEC_Referentiel Pr&#xc3;&#xa9;homologation_20111129_1 0 0</code>) sont partag&#xc3;&#xa9;s sur <b>le Google doc suivant : <a class="externalLink" href="http://bit.ly/rrJPwW"> Referentiel PreHomologation</a></b></p>
+<p>Les sc&#xe9;narii de test (<code>DMP1_LPS_TEC_Referentiel Pr&#xe9;homologation_20111129_1 0 0</code>) sont partag&#xe9;s sur <b>le Google doc suivant : <a class="externalLink" href="http://bit.ly/rrJPwW"> Referentiel PreHomologation</a></b></p>
 <p>Dans ce document, il faut : </p>
 <ul>
 <li><b>suivre les tests en jaune de la feuille &quot;Plan de tests&quot;.</b></li>
-<li><b>remplir les exigences de la feuille &quot;Exigences_DSFT&quot; : j'ai mis en jaune les cases &#xc3;&#xa0; remplir et les accronymes des personnes aptes &#xc3;&#xa0; remplir la case avec le soutien d'un autre accronyme.</b></li></ul>
+<li><b>remplir les exigences de la feuille &quot;Exigences_DSFT&quot; : j'ai mis en jaune les cases &#xe0; remplir et les accronymes des personnes aptes &#xe0; remplir la case avec le soutien d'un autre accronyme.</b></li></ul>
 <dl>
 <dt>Remarque</dt>
-<dd>Pour soumettre, nos r&#xc3;&#xa9;ponses &#xc3;&#xa0; l'ASIP il faut suivre leur formalisme. Je propose n&#xc3;&#xa9;anmoins de travailler sur les Google Docs afin de faciliter la gestion des versions de document, et consolider dans un seul document ASIP &#xc3;&#xa0; la fin.</dd>
+<dd>Pour soumettre, nos r&#xe9;ponses &#xe0; l'ASIP il faut suivre leur formalisme. Je propose n&#xe9;anmoins de travailler sur les Google Docs afin de faciliter la gestion des versions de document, et consolider dans un seul document ASIP &#xe0; la fin.</dd>
 <dt>Remarque 2</dt>
-<dd>Pour v&#xc3;&#xa9;rifier le bon d&#xc3;&#xa9;roulement des tests, il vous suffit de me fournir les logs g&#xc3;&#xa9;n&#xc3;&#xa9;r&#xc3;&#xa9;s par le proxy.</dd></dl>
-<p>Concernant les plans de test, j'ai cod&#xc3;&#xa9; en java un sc&#xc3;&#xa9;nario r&#xc3;&#xa9;pondant &#xc3;&#xa0; l'ensemble des exigences pour la pr&#xc3;&#xa9;homologation : <a href="./xref/fr/devcoop/dmpc/proxy/ws/client/PreHomologationScenario.html">./xref/fr/devcoop/dmpc/proxy/ws/client/PreHomologationScenario.html</a></p>
-<p>N'h&#xc3;&#xa9;sitez pas &#xc3;&#xa0; vous r&#xc3;&#xa9;f&#xc3;&#xa9;rer &#xc3;&#xa0; ce source.</p>
-<p>Pour l'ex&#xc3;&#xa9;cuter :</p>
+<dd>Pour v&#xe9;rifier le bon d&#xe9;roulement des tests, il vous suffit de me fournir les logs g&#xe9;n&#xe9;r&#xe9;s par le proxy.</dd></dl>
+<p>Concernant les plans de test, j'ai cod&#xe9; en java un sc&#xe9;nario r&#xe9;pondant &#xe0; l'ensemble des exigences pour la pr&#xe9;homologation : <a href="./xref/fr/devcoop/dmpc/proxy/ws/client/PreHomologationScenario.html">./xref/fr/devcoop/dmpc/proxy/ws/client/PreHomologationScenario.html</a></p>
+<p>N'h&#xe9;sitez pas &#xe0; vous r&#xe9;f&#xe9;rer &#xe0; ce source.</p>
+<p>Pour l'ex&#xe9;cuter :</p>
 <div class="source"><pre class="prettyprint linenums">java -cp dmpc-proxy-ws.jar fr.devcoop.dmpc.proxy.ws.client.PreHomologationScenario /
   -proxyURL http://127.0.0.1:9999/dmpcProxy /
   -proxyLogin hemadialyse /
@@ -190,7 +190,7 @@ dmpc.proxy.password=hemadialyse
   -insc 1266170333150997413760
 
 </pre></div>
-<p>La liste des INSCs est disponible dans la feuille PATIENTS_LOT1 du fichier Excel (<code>DMP1_LPS_Jeu_essai_pour_DEV_editeur_20110530_v0.0.4</code>). Ce fichier d&#xc3;&#xa9;crit le jeu de donn&#xc3;&#xa9;es charg&#xc3;&#xa9; pour les tests. Il contient 20 DMP vides, 5 DMP charg&#xc3;&#xa9;s avec des documents. </p></section></section>
+<p>La liste des INSCs est disponible dans la feuille PATIENTS_LOT1 du fichier Excel (<code>DMP1_LPS_Jeu_essai_pour_DEV_editeur_20110530_v0.0.4</code>). Ce fichier d&#xe9;crit le jeu de donn&#xe9;es charg&#xe9; pour les tests. Il contient 20 DMP vides, 5 DMP charg&#xe9;s avec des documents. </p></section></section>
         </main>
     </div>
     <hr/>

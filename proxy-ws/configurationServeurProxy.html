@@ -82,7 +82,7 @@
           <ul class="breadcrumb">
         <li id="publishDate">Last Published: 2020-02-26<span class="divider">|</span>
 </li>
-          <li id="projectVersion">Version: 3.0.1-SNAPSHOT</li>
+          <li id="projectVersion">Version: 3.0.1</li>
           </ul>
         </div>
       </header>
@@ -95,7 +95,7 @@
 %&gt; cd dmpc-proxy-ws-bin
 </pre></div></section><section>
 <h3><a name="Configuration_du_serveur_Proxy"></a>Configuration du serveur Proxy</h3>
-<p>Le serveur proxy-ws est une application spring-boot configurable par l'interm&#xc3;&#xa9;diaire d'un fichier <code>application.yml</code>. Les param&#xc3;&#xa8;tres configurables sont, l'url du serveur DMP, les informations concernant les certificats serveurs, ...</p>
+<p>Le serveur proxy-ws est une application spring-boot configurable par l'interm&#xe9;diaire d'un fichier <code>application.yml</code>. Les param&#xe8;tres configurables sont, l'url du serveur DMP, les informations concernant les certificats serveurs, ...</p>
 <p>Exemple : </p>
 <div class="source"><pre class="prettyprint linenums">dmpc:
     # url du serveur DMP
@@ -105,14 +105,14 @@
 <h3><a name="Lancement_du_serveur"></a>Lancement du serveur </h3>
 <div class="source"><pre class="prettyprint linenums">%&gt; java -Dspring.config.location=application.yml -jar dmpc-proxy-ws.jar 
 </pre></div>
-<p>Le wsdl du serveur est accessible (modulo la configuration de port dans le fichier <code>application.yml</code>) &#xc3;&#xa0; l'url suivante : http://localhost:9999/services/dmpcProxy?wsdl</p></section><section>
+<p>Le wsdl du serveur est accessible (modulo la configuration de port dans le fichier <code>application.yml</code>) &#xe0; l'url suivante : http://localhost:9999/services/dmpcProxy?wsdl</p></section><section>
 <h3><a name="Certificats_serveurs"></a>Certificats serveurs</h3>
-<p>Le fichier de configuration <code>application.yml</code> fait &#xc3;&#xa9;tat de 2 fichiers contenant les keystores suivant :</p>
+<p>Le fichier de configuration <code>application.yml</code> fait &#xe9;tat de 2 fichiers contenant les keystores suivant :</p>
 <ul>
-<li>un keystore SSL : contenant la cl&#xc3;&#xa9; priv&#xc3;&#xa9; et le certificat permettant la connexion TLS avec le serveur DMP</li>
-<li>un keystore SMime : contenant la cl&#xc3;&#xa9; priv&#xc3;&#xa9; et le certificat permettant la signature du VIHF (Vecteur d'Itentification et d'Habilitation Formelle) et des soumissions.
-<p>Ils correspondent &#xc3;&#xa0; ce que nous pouvons trouver sur l'annuaire du GIP-CPS : <a class="externalLink" href="http://http://annuaire.gip-cps.fr/"></a></p><figure><img src="../certifServeurSurAnnuaire-gip-cps.png" alt="" /></figure>
-<p>A ce certificat serveur correspond le secteur d'activit&#xc3;&#xa9; RPPS <b>SA43</b>, c'est celui l&#xc3;&#xa0; qui doit &#xc3;&#xaa;tre utilis&#xc3;&#xa9; pour structureActivite de l'auteur :</p><figure><img src="../certifServeurSurAnnuaire-gip-cps-2.png" alt="" /></figure></li></ul></section></section>
+<li>un keystore SSL : contenant la cl&#xe9; priv&#xe9; et le certificat permettant la connexion TLS avec le serveur DMP</li>
+<li>un keystore SMime : contenant la cl&#xe9; priv&#xe9; et le certificat permettant la signature du VIHF (Vecteur d'Itentification et d'Habilitation Formelle) et des soumissions.
+<p>Ils correspondent &#xe0; ce que nous pouvons trouver sur l'annuaire du GIP-CPS : <a class="externalLink" href="http://http://annuaire.gip-cps.fr/"></a></p><figure><img src="../certifServeurSurAnnuaire-gip-cps.png" alt="" /></figure>
+<p>A ce certificat serveur correspond le secteur d'activit&#xe9; RPPS <b>SA43</b>, c'est celui l&#xe0; qui doit &#xea;tre utilis&#xe9; pour structureActivite de l'auteur :</p><figure><img src="../certifServeurSurAnnuaire-gip-cps-2.png" alt="" /></figure></li></ul></section></section>
         </main>
     </div>
     <hr/>

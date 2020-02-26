@@ -82,19 +82,19 @@
           <ul class="breadcrumb">
         <li id="publishDate">Last Published: 2020-02-26<span class="divider">|</span>
 </li>
-          <li id="projectVersion">Version: 3.0.1-SNAPSHOT</li>
+          <li id="projectVersion">Version: 3.0.1</li>
           </ul>
         </div>
       </header>
         <main id="bodyColumn" >
 <section>
 <h2><a name="Homologation"></a>Homologation</h2>
-<p>Pour ex&#xc3;&#xa9;cuter les tests il faut suivre les descriptions donn&#xc3;&#xa9;es dans la feuille &quot;Plans de test&quot; colonne H &quot;Cas de test&quot;.</p>
-<p>Dans le cadre de l'homologation (test 0.1-060 except&#xc3;&#xa9;), il faut lancer le serveur DMPCProxy avec la configuration Spring, <code>dmp-devHomologation.xml</code> fournie :</p>
+<p>Pour ex&#xe9;cuter les tests il faut suivre les descriptions donn&#xe9;es dans la feuille &quot;Plans de test&quot; colonne H &quot;Cas de test&quot;.</p>
+<p>Dans le cadre de l'homologation (test 0.1-060 except&#xe9;), il faut lancer le serveur DMPCProxy avec la configuration Spring, <code>dmp-devHomologation.xml</code> fournie :</p>
 <div class="source"><pre class="prettyprint linenums">%&gt; java -cp dmpc-proxy-ws.jar fr.devcoop.dmpc.proxy.ws.server.DMPCProxyServer  / 
         -proxyURL http://127.0.0.1:9999/dmpcProxy -springContext META-INF/spring/dmpc-homologation.xml
 </pre></div>
-<p>Si l'erreur suivante apparait lors du d&#xc3;&#xa9;marrage du serveur : </p>
+<p>Si l'erreur suivante apparait lors du d&#xe9;marrage du serveur : </p>
 <div class="source"><pre class="prettyprint linenums">Exception in thread &quot;main&quot; org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'dmpc.lpsInfo' defined in class path resource [META-INF/spring/dmpc-core.xml]: Could not resolve placeholder 'dmpc.lpsInfo.id'
         at org.springframework.beans.factory.config.PropertyPlaceholderConfigurer.processProperties(PropertyPlaceholderConfigurer.java:287)
         at org.springframework.beans.factory.config.PropertyResourceConfigurer.postProcessBeanFactory(PropertyResourceConfigurer.java:75)
@@ -107,30 +107,30 @@
 </pre></div>
 <p>Il manque le fichier de properties de configuration <code>dmpc-homologation.properties</code> dans l'archive <code>dmpc-proxy-ws.jar</code> du livrable. Avec un outil tel 7Zip ouvrez le fichier jar et rajouter le fichier <code>dmpc-homologation.properties</code> dans <code>META-INF/spring</code> :</p><figure><img src="dmp-proxy-ws-META-INF-SPRING.png" alt="" /></figure><section>
 <h3><a name="Test_0.1-060"></a>Test 0.1-060</h3>
-<p>Dans ce test, il faut lancer plusieurs fois un m&#xc3;&#xaa;me test d'existence sur un DMP avec des configurations du DMPC diff&#xc3;&#xa9;rents. La ligne de commande pour lancer les DMPCProxy est de la forme : </p>
+<p>Dans ce test, il faut lancer plusieurs fois un m&#xea;me test d'existence sur un DMP avec des configurations du DMPC diff&#xe9;rents. La ligne de commande pour lancer les DMPCProxy est de la forme : </p>
 <div class="source"><pre class="prettyprint linenums">%&gt; java -cp dmpc-proxy-ws.jar fr.devcoop.dmpc.proxy.ws.server.DMPCProxyServer  / 
         -proxyURL http://127.0.0.1:9999/dmpcProxy -springContext META-INF/spring/CONFIGURATION-SPRING-A-CHANGER.xml
 </pre></div>
 <p>Il suffit de changer <b>CONFIGURATION-SPRING-A-CHANGER.xml</b>.</p>
 <ol style="list-style-type: decimal">
-<li>Test dans &quot;Environnement d'homologation&quot;, le serveur proxy est lanc&#xc3;&#xa9; avec pour config : <b>dmpc-homologation.xml</b>
+<li>Test dans &quot;Environnement d'homologation&quot;, le serveur proxy est lanc&#xe9; avec pour config : <b>dmpc-homologation.xml</b>
 <p>Test passant.</p></li>
-<li>Test dans &quot;Serveur Bac &#xc3;&#xa0; sable (dev1)&quot;, le serveur proxy est lanc&#xc3;&#xa9; avec pour config : <b>dmpc-dev1.xml</b>
+<li>Test dans &quot;Serveur Bac &#xe0; sable (dev1)&quot;, le serveur proxy est lanc&#xe9; avec pour config : <b>dmpc-dev1.xml</b>
 <p>Test passant.</p></li>
-<li>Test dans &quot;Environnement Atos&quot;, le serveur proxy est lanc&#xc3;&#xa9; avec pour config : <b>dmpc-atos.xml</b>
-<p>Ce test est non passant et g&#xc3;&#xa9;n&#xc3;&#xa8;re une exception dont le message est : </p>
+<li>Test dans &quot;Environnement Atos&quot;, le serveur proxy est lanc&#xe9; avec pour config : <b>dmpc-atos.xml</b>
+<p>Ce test est non passant et g&#xe9;n&#xe8;re une exception dont le message est : </p>
 <div class="source"><pre class="prettyprint linenums">Exception in thread &quot;main&quot; fr.devcoop.dmpc.proxy.DMPCProxyException: com.ctc.wstx.exc.WstxIOException: 
 sun.security.validator.ValidatorException: PKIX path building failed: 
 sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 </pre></div></li>
-<li>Test dans &quot;Environnement Fake&quot;, le serveur proxy est lanc&#xc3;&#xa9; avec pour config : <b>dmpc-fake.xml</b>
-<p>Ce test est non passant et g&#xc3;&#xa9;n&#xc3;&#xa8;re une exception dont le message est : </p>
+<li>Test dans &quot;Environnement Fake&quot;, le serveur proxy est lanc&#xe9; avec pour config : <b>dmpc-fake.xml</b>
+<p>Ce test est non passant et g&#xe9;n&#xe8;re une exception dont le message est : </p>
 <div class="source"><pre class="prettyprint linenums">Exception in thread &quot;main&quot; fr.devcoop.dmpc.proxy.DMPCProxyException: com.ctc.wstx.exc.WstxIOException: 
 The https URL hostname does not match the Common Name (CN) on the server certificate.  
 To disable this check (NOT recommended for production) set the CXF client TLS configuration property &quot;disableCNCheck&quot; to true.
 </pre></div></li></ol></section><section>
 <h3><a name="Autres_tests"></a>Autres tests </h3>
-<p>Ex&#xc3;&#xa9;cuter les autres tests d'homologation en authentification indirecte avec le profil alimentation.</p></section></section>
+<p>Ex&#xe9;cuter les autres tests d'homologation en authentification indirecte avec le profil alimentation.</p></section></section>
         </main>
     </div>
     <hr/>

@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="Apache Maven Doxia Site Renderer 1.9.1" />
-    <title>DMPC-API : Le connecteur DMP par DEVCOOP &#x2013; Les diffÃ©rentes transactions vers le DMP</title>
+    <title>DMPC-API : Le connecteur DMP par DEVCOOP &#x2013; Les différentes transactions vers le DMP</title>
     <link rel="stylesheet" href="../css/apache-maven-fluido-1.8.min.css" />
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/print.css" media="print" />
@@ -82,27 +82,27 @@
           <ul class="breadcrumb">
         <li id="publishDate">Last Published: 2020-02-26<span class="divider">|</span>
 </li>
-          <li id="projectVersion">Version: 3.0.1-SNAPSHOT</li>
+          <li id="projectVersion">Version: 3.0.1</li>
           </ul>
         </div>
       </header>
         <main id="bodyColumn" >
-<h1>Les diff&#xc3;&#xa9;rentes transactions vers le DMP</h1>
-<p>Toutes transactions vers le DMP&#xc2;&#xa0;se fait en pr&#xc3;&#xa9;cisant un DMPCContext et une requ&#xc3;&#xaa;te sp&#xc3;&#xa9;cifique en argument d&#x2019;une m&#xc3;&#xa9;thode du DMPCClient.</p>
-<p>Le DMPCContext contient les informations permettant de d&#xc3;&#xa9;finir :&#xc2;&#xa0;</p>
+<h1>Les diff&#xe9;rentes transactions vers le DMP</h1>
+<p>Toutes transactions vers le DMP&#xa0;se fait en pr&#xe9;cisant un DMPCContext et une requ&#xea;te sp&#xe9;cifique en argument d&#x2019;une m&#xe9;thode du DMPCClient.</p>
+<p>Le DMPCContext contient les informations permettant de d&#xe9;finir :&#xa0;</p>
 <ul>
 
 <li>L&#x2019;auteur de la transaction,</li>
-<li>Le code de confidentialit&#xc3;&#xa9; de la transaction (connexion secr&#xc3;&#xa8;te, invisible aux repr&#xc3;&#xa9;sentants l&#xc3;&#xa9;gaux du patient)</li>
-<li>L&#x2019;autorit&#xc3;&#xa9; des cartes vitales utilis&#xc3;&#xa9;es (r&#xc3;&#xa9;elles ou test)</li>
+<li>Le code de confidentialit&#xe9; de la transaction (connexion secr&#xe8;te, invisible aux repr&#xe9;sentants l&#xe9;gaux du patient)</li>
+<li>L&#x2019;autorit&#xe9; des cartes vitales utilis&#xe9;es (r&#xe9;elles ou test)</li>
 </ul>
-<p>&#xc3;&#x20ac; ce DMPCContext est associ&#xc3;&#xa9; un autre argument d&#xc3;&#xa9;pendant de la transaction r&#xc3;&#xa9;alis&#xc3;&#xa9;e.</p><section>
+<p>&#xc0; ce DMPCContext est associ&#xe9; un autre argument d&#xe9;pendant de la transaction r&#xe9;alis&#xe9;e.</p><section>
 <h2><a name="Mode_d.E2.80.99authentification"></a>Mode d&#x2019;authentification</h2><section>
 <h3><a name="Directe_.28.40since_version_3.1_de_la_DMPC-API.29"></a>Directe (@since version 3.1 de la DMPC-API)</h3>
-<p>En authentification directe, l&#x2019;utilisateur personnel de sant&#xc3;&#xa9; est authentifi&#xc3;&#xa9; par sa carte CPS/CPE, ces informations sont r&#xc3;&#xa9;cup&#xc3;&#xa9;r&#xc3;&#xa9;es lors de la lecture de la carte CPS.</p></section><section>
+<p>En authentification directe, l&#x2019;utilisateur personnel de sant&#xe9; est authentifi&#xe9; par sa carte CPS/CPE, ces informations sont r&#xe9;cup&#xe9;r&#xe9;es lors de la lecture de la carte CPS.</p></section><section>
 <h3><a name="Indirecte"></a>Indirecte</h3>
-<p>En authentification indirecte, seule la structure de sant&#xc3;&#xa9; (par son certificat serveur) est authentifi&#xc3;&#xa9;e.</p>
-<p>L&#x2019;auteur de la requ&#xc3;&#xaa;te, c&#x2019;est &#xc3;&#xa0; dire le personnel de sant&#xc3;&#xa9; utilisateur (DMPCPersonnelSante), doit donc &#xc3;&#xaa;tre authentifi&#xc3;&#xa9; localement. Le syst&#xc3;&#xa8;me de la structure de sant&#xc3;&#xa9; doit &#xc3;&#xaa;tre en mesure d&#x2019;authentifi&#xc3;&#xa9; ses utilisateurs. Cet identifiant local au syst&#xc3;&#xa8;me doit &#xc3;&#xaa;tre sp&#xc3;&#xa9;cifi&#xc3;&#xa9; dans DMPCPersonnelSante.internalId m&#xc3;&#xaa;me si le rpps est connu.</p>
+<p>En authentification indirecte, seule la structure de sant&#xe9; (par son certificat serveur) est authentifi&#xe9;e.</p>
+<p>L&#x2019;auteur de la requ&#xea;te, c&#x2019;est &#xe0; dire le personnel de sant&#xe9; utilisateur (DMPCPersonnelSante), doit donc &#xea;tre authentifi&#xe9; localement. Le syst&#xe8;me de la structure de sant&#xe9; doit &#xea;tre en mesure d&#x2019;authentifi&#xe9; ses utilisateurs. Cet identifiant local au syst&#xe8;me doit &#xea;tre sp&#xe9;cifi&#xe9; dans DMPCPersonnelSante.internalId m&#xea;me si le rpps est connu.</p>
 <p>Exemple :</p>
 
 <div>
@@ -110,18 +110,18 @@
 <pre class="source">DMPCContext context = new DMPCContext();
 DMPCPersonnelSante ps = new DMPCPersonnelSante();
 ps.setInternalId(&quot;1234567890&quot;);
-ps.setNom(&quot;For&#xc3;&#xaa;t&quot;);
+ps.setNom(&quot;For&#xea;t&quot;);
 ps.setPrenom(&quot;Laurent&quot;);
-ps.setRole(&quot;10&quot;); // M&#xc3;&#xa9;decin  dans la nomenclature DMPCCode.ASIPJeuxValeurs.SUBJECT_ROLE      
-ps.setSpecialite(&quot;G15_10/SM30&quot;); // G15_10/SM30 N&#xc3;&#xa9;phrologie  dans la nomenclature DMPCCode.ASIPJeuxValeurs.AUTHOR_SPECIALITY
-ps.setSecteurActivite(&quot;SA01&quot;);  // Etablissement public de sant&#xc3;&#xa9; dans la nomenclature DMPCCode.ASIPJeuxValeurs.HEALTH_CARE_FACILITY_TYPE_CODE
-ps.getStructureSante().setNom(&quot;DEVCOOP Bureau de L&#xc3;&#xa9;ognan&quot;);
+ps.setRole(&quot;10&quot;); // M&#xe9;decin  dans la nomenclature DMPCCode.ASIPJeuxValeurs.SUBJECT_ROLE      
+ps.setSpecialite(&quot;G15_10/SM30&quot;); // G15_10/SM30 N&#xe9;phrologie  dans la nomenclature DMPCCode.ASIPJeuxValeurs.AUTHOR_SPECIALITY
+ps.setSecteurActivite(&quot;SA01&quot;);  // Etablissement public de sant&#xe9; dans la nomenclature DMPCCode.ASIPJeuxValeurs.HEALTH_CARE_FACILITY_TYPE_CODE
+ps.getStructureSante().setNom(&quot;DEVCOOP Bureau de L&#xe9;ognan&quot;);
 context.setAuthor(ps);
 </pre></div></div>
 </section></section><section>
-<h2><a name="a.C3.82.C2.A0R.C3.83.C2.A9cup.C3.83.C2.A9ration_des_diff.C3.83.C2.A9rents_param.C3.83.C2.A8tres_du_DMP"></a>&#xc2;&#xa0;R&#xc3;&#xa9;cup&#xc3;&#xa9;ration des diff&#xc3;&#xa9;rents param&#xc3;&#xa8;tres du DMP</h2><section>
+<h2><a name="a.C2.A0R.C3.A9cup.C3.A9ration_des_diff.C3.A9rents_param.C3.A8tres_du_DMP"></a>&#xa0;R&#xe9;cup&#xe9;ration des diff&#xe9;rents param&#xe8;tres du DMP</h2><section>
 <h3><a name="getParametres.28.29"></a>getParametres()</h3>
-<p>Afin de pouvoir r&#xc3;&#xa9;cup&#xc3;&#xa9;rer le param&#xc3;&#xa8;trage du DMP qui permet de r&#xc3;&#xa9;pondre &#xc3;&#xa0; un certain nombre d&#x2019;exigences notamment les fonctions-gestion-mineurs (EX_GEN-1550). Il faut acc&#xc3;&#xa9;der &#xc3;&#xa0; la m&#xc3;&#xa9;thode getParametres</p>
+<p>Afin de pouvoir r&#xe9;cup&#xe9;rer le param&#xe8;trage du DMP qui permet de r&#xe9;pondre &#xe0; un certain nombre d&#x2019;exigences notamment les fonctions-gestion-mineurs (EX_GEN-1550). Il faut acc&#xe9;der &#xe0; la m&#xe9;thode getParametres</p>
 <p>Exemple :</p>
 
 <div>
@@ -141,8 +141,8 @@ context.setAuthor(ps);
 </pre></div></div>
 </section><section>
 <h3><a name="getCodesFor.28.29"></a>getCodesFor()</h3>
-<p>M&#xc3;&#xa9;thode permettant d&#x2019;acc&#xc3;&#xa9;der aux diff&#xc3;&#xa9;rents jeux de valeurs impos&#xc3;&#xa9;s par le Guide d&#x2019;int&#xc3;&#xa9;gration.</p>
-<p>notamment :&#xc2;&#xa0;</p>
+<p>M&#xe9;thode permettant d&#x2019;acc&#xe9;der aux diff&#xe9;rents jeux de valeurs impos&#xe9;s par le Guide d&#x2019;int&#xe9;gration.</p>
+<p>notamment :&#xa0;</p>
 
 <div>
 <div>
@@ -171,16 +171,16 @@ context.setAuthor(ps);
 </pre></div></div>
 </section></section><section>
 <h2><a name="Transactions_d.E2.80.99identification_du_patient"></a>Transactions d&#x2019;identification du patient</h2><section>
-<h3><a name="TD_0.0_:.C3.82.C2.A0Acquisition_de_l.E2.80.99identit.C3.83.C2.A9_du_patient"></a>TD 0.0 :&#xc2;&#xa0;Acquisition de l&#x2019;identit&#xc3;&#xa9; du patient</h3>
-<p>Cette fonctionnalit&#xc3;&#xa9; permet au LPS d&#xe2;&#x20ac;&#x2122;acqu&#xc3;&#xa9;rir l&#xe2;&#x20ac;&#x2122;identit&#xc3;&#xa9; du patient et de d&#xc3;&#xa9;clencher les m&#xc3;&#xa9;canismes d&#xe2;&#x20ac;&#x2122;identito-vigilance. Avant le premier acc&#xc3;&#xa8;s au DMP d&#xe2;&#x20ac;&#x2122;un patient via les interfaces LPS v2 du syst&#xc3;&#xa8;me DMP, le LPS :</p>
+<h3><a name="TD_0.0_:.C2.A0Acquisition_de_l.E2.80.99identit.C3.A9_du_patient"></a>TD 0.0 :&#xa0;Acquisition de l&#x2019;identit&#xe9; du patient</h3>
+<p>Cette fonctionnalit&#xe9; permet au LPS d&#x2019;acqu&#xe9;rir l&#x2019;identit&#xe9; du patient et de d&#xe9;clencher les m&#xe9;canismes d&#x2019;identito-vigilance. Avant le premier acc&#xe8;s au DMP d&#x2019;un patient via les interfaces LPS v2 du syst&#xe8;me DMP, le LPS :</p>
 <ul>
 
-<li>acquiert l&#xe2;&#x20ac;&#x2122;INS et les traits d&#xe2;&#x20ac;&#x2122;identit&#xc3;&#xa9; du patient (cf. RG_0110) via la transaction TD0.0,</li>
-<li>d&#xc3;&#xa9;clenche les m&#xc3;&#xa9;canismes d&#xe2;&#x20ac;&#x2122;identito-vigilance en utilisant les donn&#xc3;&#xa9;es d&#xe2;&#x20ac;&#x2122;identification du patient fournies par la transaction TD0.0 (cf. RG_0130).</li>
-<li>d&#xc3;&#xa9;termine le statut de l&#xe2;&#x20ac;&#x2122;INS du patient (cf. RG_0140).</li>
+<li>acquiert l&#x2019;INS et les traits d&#x2019;identit&#xe9; du patient (cf. RG_0110) via la transaction TD0.0,</li>
+<li>d&#xe9;clenche les m&#xe9;canismes d&#x2019;identito-vigilance en utilisant les donn&#xe9;es d&#x2019;identification du patient fournies par la transaction TD0.0 (cf. RG_0130).</li>
+<li>d&#xe9;termine le statut de l&#x2019;INS du patient (cf. RG_0140).</li>
 </ul>
-<p>Pour les acc&#xc3;&#xa8;s suivants, le LPS acquiert l&#xe2;&#x20ac;&#x2122;INS du patient stock&#xc3;&#xa9; en base locale.</p>
-<p>Exemple :&#xc2;&#xa0;</p>
+<p>Pour les acc&#xe8;s suivants, le LPS acquiert l&#x2019;INS du patient stock&#xe9; en base locale.</p>
+<p>Exemple :&#xa0;</p>
 
 <div>
 <div>
@@ -194,42 +194,42 @@ if (td00Response == null) {
 }
 </pre></div></div>
 </section><section>
-<h3><a name="TD0.2_:_test_d.C3.A2.E2.82.AC.E2.84.A2existence_du_DMP_d.C3.A2.E2.82.AC.E2.84.A2un_patient_et_v.C3.83.C2.A9rification_de_l.C3.A2.E2.82.AC.E2.84.A2autorisation_d.C3.A2.E2.82.AC.E2.84.A2acc.C3.83.C2.A8s"></a>TD0.2 : test d&#xe2;&#x20ac;&#x2122;existence du DMP d&#xe2;&#x20ac;&#x2122;un patient et v&#xc3;&#xa9;rification de l&#xe2;&#x20ac;&#x2122;autorisation d&#xe2;&#x20ac;&#x2122;acc&#xc3;&#xa8;s</h3>
-<p>Cette transaction permet de tester l&#x2019;existence d&#x2019;un DMP et de v&#xc3;&#xa9;rifier les autorisations d&#x2019;acc&#xc3;&#xa8;s ainsi que de r&#xc3;&#xa9;cup&#xc3;&#xa9;rer les informations concernant la cr&#xc3;&#xa9;ation du compte patient.</p>
-<p>De l&#xc3;&#xa0; peut en d&#xc3;&#xa9;couler des actions de cr&#xc3;&#xa9;ations de DMP, de cr&#xc3;&#xa9;ation de compte internet, ou bien encore de conna&#xc3;&#xae;tre la raison d&#x2019;une interdiction d&#x2019;acc&#xc3;&#xa8;s</p>
+<h3><a name="TD0.2_:_test_d.E2.80.99existence_du_DMP_d.E2.80.99un_patient_et_v.C3.A9rification_de_l.E2.80.99autorisation_d.E2.80.99acc.C3.A8s"></a>TD0.2 : test d&#x2019;existence du DMP d&#x2019;un patient et v&#xe9;rification de l&#x2019;autorisation d&#x2019;acc&#xe8;s</h3>
+<p>Cette transaction permet de tester l&#x2019;existence d&#x2019;un DMP et de v&#xe9;rifier les autorisations d&#x2019;acc&#xe8;s ainsi que de r&#xe9;cup&#xe9;rer les informations concernant la cr&#xe9;ation du compte patient.</p>
+<p>De l&#xe0; peut en d&#xe9;couler des actions de cr&#xe9;ations de DMP, de cr&#xe9;ation de compte internet, ou bien encore de conna&#xee;tre la raison d&#x2019;une interdiction d&#x2019;acc&#xe8;s</p>
 <p>Exemple :</p>
 
 <div>
 <div>
 <pre class="source">TD02Response response = client.td02Exist(context, new TD02Request(&quot;211066322074514&quot;));
 if (response.getAutorisation().equals(EXPIRE)) {
-    // pr&#xc3;&#xa9;voir une client.td03AddAuthorization()
+    // pr&#xe9;voir une client.td03AddAuthorization()
 } else if (response.getAutorisation().equals(INTERDIT)) {
-    // le PS&#xc2;&#xa0;ne peut acc&#xc3;&#xa9;der au DMP
+    // le PS&#xa0;ne peut acc&#xe9;der au DMP
     final String raison = response.getRaison();
 } else if (response.getAutorisation().equals(NON_EXISTE)) {
-    // pr&#xc3;&#xa9;voir une client.td03AddAuthorization()
+    // pr&#xe9;voir une client.td03AddAuthorization()
 } else if (response.getAutorisation().equals(VALIDE)) {
     if (!response.getCompteInternetOuvert()) {
-        // pr&#xc3;&#xa9;vour une client.td15aCreerAccesInternetPatient()
+        // pr&#xe9;vour une client.td15aCreerAccesInternetPatient()
     }
-    // contient les informations patient stock&#xc3;&#xa9;es dans leDMP
+    // contient les informations patient stock&#xe9;es dans leDMP
     final DMPCPatient dmpPatient = response.getPatient();
     if (response.getRole().equals(DMPCRole.MEDECIN_TRAITANT)) {
-        // le PS author est le m&#xc3;&#xa9;decint traitant
+        // le PS author est le m&#xe9;decint traitant
     } 
 }
 </pre></div></div>
 </section><section>
-<h3><a name="TD0.3_:.C3.82.C2.A0modifier_l.C3.A2.E2.82.AC.E2.84.A2autorisation_d.C3.A2.E2.82.AC.E2.84.A2acc.C3.83.C2.A8s_et.2Fou_le_statut_m.C3.83.C2.A9decin_traitant_DMP_ou_passer_en_mode_d.C3.A2.E2.82.AC.E2.84.A2acc.C3.83.C2.A8s_.C3.82.C2.AB_bris_de_glace_.C3.82.C2.BB"></a>TD0.3 :&#xc2;&#xa0;modifier l&#xe2;&#x20ac;&#x2122;autorisation d&#xe2;&#x20ac;&#x2122;acc&#xc3;&#xa8;s et/ou le statut m&#xc3;&#xa9;decin traitant DMP ou passer en mode d&#xe2;&#x20ac;&#x2122;acc&#xc3;&#xa8;s &#xc2;&#xab; bris de glace &#xc2;&#xbb;</h3>
-<p>Le LPS permet &#xc3;&#xa0; l&#xe2;&#x20ac;&#x2122;utilisateur les actions suivantes.</p>
+<h3><a name="TD0.3_:.C2.A0modifier_l.E2.80.99autorisation_d.E2.80.99acc.C3.A8s_et.2Fou_le_statut_m.C3.A9decin_traitant_DMP_ou_passer_en_mode_d.E2.80.99acc.C3.A8s_.C2.AB_bris_de_glace_.C2.BB"></a>TD0.3 :&#xa0;modifier l&#x2019;autorisation d&#x2019;acc&#xe8;s et/ou le statut m&#xe9;decin traitant DMP ou passer en mode d&#x2019;acc&#xe8;s &#xab; bris de glace &#xbb;</h3>
+<p>Le LPS permet &#xe0; l&#x2019;utilisateur les actions suivantes.</p>
 <ul>
 
-<li>Ajouter une autorisation d&#xe2;&#x20ac;&#x2122;acc&#xc3;&#xa8;s au DMP du patient ou passer en mode d&#xe2;&#x20ac;&#x2122;acc&#xc3;&#xa8;s &#xc2;&#xab; bris de glace &#xc2;&#xbb;. Cf. DMP_0.3a.</li>
-<li>Supprimer une autorisation d&#xe2;&#x20ac;&#x2122;acc&#xc3;&#xa8;s au DMP du patient. Cf. DMP_0.3b.</li>
-<li>Modifier le statut m&#xc3;&#xa9;decin traitant DMP. Cf. DMP_0.3c.</li>
+<li>Ajouter une autorisation d&#x2019;acc&#xe8;s au DMP du patient ou passer en mode d&#x2019;acc&#xe8;s &#xab; bris de glace &#xbb;. Cf. DMP_0.3a.</li>
+<li>Supprimer une autorisation d&#x2019;acc&#xe8;s au DMP du patient. Cf. DMP_0.3b.</li>
+<li>Modifier le statut m&#xe9;decin traitant DMP. Cf. DMP_0.3c.</li>
 </ul>
-<p>Exemple :&#xc2;&#xa0;</p>
+<p>Exemple :&#xa0;</p>
 
 <div>
 <div>
@@ -242,29 +242,29 @@ client.td03AddAuthorization(context, new TD03Request(patient.getIns(), DMPCRole.
 <p>Non requis pour le DMP</p></section><section>
 <h3><a name="TD0.5"></a>TD0.5</h3>
 <p>Non requis pour le DMP</p></section><section>
-<h3><a name="TD1.1_:_cr.C3.83.C2.A9er_un_DMP"></a>TD1.1 : cr&#xc3;&#xa9;er un DMP</h3>
-<p>Cette fonctionnalit&#xc3;&#xa9; permet de cr&#xc3;&#xa9;er le DMP d&#xe2;&#x20ac;&#x2122;un patient. Le LPS :</p>
+<h3><a name="TD1.1_:_cr.C3.A9er_un_DMP"></a>TD1.1 : cr&#xe9;er un DMP</h3>
+<p>Cette fonctionnalit&#xe9; permet de cr&#xe9;er le DMP d&#x2019;un patient. Le LPS :</p>
 <ul>
 
-<li>contr&#xc3;&#xb4;le les pr&#xc3;&#xa9;requis &#xc3;&#xa0; la cr&#xc3;&#xa9;ation du DMP du patient (cf. RG_1010),</li>
-<li>acquiert les donn&#xc3;&#xa9;es administratives du patient (cf. RG_1020),</li>
-<li>acquiert le statut du DMP &#xc3;&#xa0; cr&#xc3;&#xa9;er (cf. RG_1030),</li>
-<li>acquiert l&#xe2;&#x20ac;&#x2122;adresse postale du patient (cf. RG_1040),</li>
+<li>contr&#xf4;le les pr&#xe9;requis &#xe0; la cr&#xe9;ation du DMP du patient (cf. RG_1010),</li>
+<li>acquiert les donn&#xe9;es administratives du patient (cf. RG_1020),</li>
+<li>acquiert le statut du DMP &#xe0; cr&#xe9;er (cf. RG_1030),</li>
+<li>acquiert l&#x2019;adresse postale du patient (cf. RG_1040),</li>
 <li>acquiert la date de naissance du patient (cf. RG_1050),</li>
-<li>acquiert les donn&#xc3;&#xa9;es concernant le repr&#xc3;&#xa9;sentant l&#xc3;&#xa9;gal du patient (cf. RG_1060),</li>
-<li>acquiert le consentement du patient &#xc3;&#xa0; la cr&#xc3;&#xa9;ation de son DMP (cf. RG_1070),</li>
-<li>acquiert la demande d&#xe2;&#x20ac;&#x2122;ajout du statut m&#xc3;&#xa9;decin traitant DMP (cf. RG_1080),</li>
-<li>acquiert le consentement du patient &#xc3;&#xa0; l&#xe2;&#x20ac;&#x2122;acc&#xc3;&#xa8;s &#xc3;&#xa0; son DMP en mode &#xc2;&#xab; bris de glace &#xc2;&#xbb; et en mode &#xc2;&#xab; centre de r&#xc3;&#xa9;gulation &#xc2;&#xbb; (cf. RG_1090),</li>
-<li>cr&#xc3;&#xa9;e le DMP du patient (cf. RG_1100 et TD1.1),</li>
-<li>ajoute statut m&#xc3;&#xa9;decin traitant DMP (cf. RG_1110 et TD0.3),</li>
-<li>acquiert la demande d&#xe2;&#x20ac;&#x2122;activation du compte internet du patient ou d&#xc3;&#xa9;clenche automatiquement l&#xe2;&#x20ac;&#x2122;activation du compte internet du patient (cf. RG_1120),</li>
-<li>G&#xc3;&#xa9;n&#xc3;&#xa9;re un &#xc2;&#xab; document d&#xe2;&#x20ac;&#x2122;accus&#xc3;&#xa9; de cr&#xc3;&#xa9;ation du DMP &#xc2;&#xbb; en l&#xe2;&#x20ac;&#x2122;absence d&#xe2;&#x20ac;&#x2122;activation du compte internet du patient (cf. RG_1130).</li>
+<li>acquiert les donn&#xe9;es concernant le repr&#xe9;sentant l&#xe9;gal du patient (cf. RG_1060),</li>
+<li>acquiert le consentement du patient &#xe0; la cr&#xe9;ation de son DMP (cf. RG_1070),</li>
+<li>acquiert la demande d&#x2019;ajout du statut m&#xe9;decin traitant DMP (cf. RG_1080),</li>
+<li>acquiert le consentement du patient &#xe0; l&#x2019;acc&#xe8;s &#xe0; son DMP en mode &#xab; bris de glace &#xbb; et en mode &#xab; centre de r&#xe9;gulation &#xbb; (cf. RG_1090),</li>
+<li>cr&#xe9;e le DMP du patient (cf. RG_1100 et TD1.1),</li>
+<li>ajoute statut m&#xe9;decin traitant DMP (cf. RG_1110 et TD0.3),</li>
+<li>acquiert la demande d&#x2019;activation du compte internet du patient ou d&#xe9;clenche automatiquement l&#x2019;activation du compte internet du patient (cf. RG_1120),</li>
+<li>G&#xe9;n&#xe9;re un &#xab; document d&#x2019;accus&#xe9; de cr&#xe9;ation du DMP &#xbb; en l&#x2019;absence d&#x2019;activation du compte internet du patient (cf. RG_1130).</li>
 </ul>
 <p>Exemple :</p>
 
 <div>
 <div>
-<pre class="source">// td00&#xc2;&#xa0;requise avant cr&#xc3;&#xa9;ation d'un DMP
+<pre class="source">// td00&#xa0;requise avant cr&#xe9;ation d'un DMP
 final TD00Request td00Request = new TD00Request();
 td00Request.setDateNaissance(&quot;2011-06-07&quot;);
 td00Request.setNirOuvrantDroit(new DMPCNir(&quot;211066322074514&quot;));
@@ -288,8 +288,8 @@ patient.setNomUsuel(&quot;PATB-TROIS&quot;);
 
 final DMPCAdresse adresse = new DMPCAdresse();
 adresse.setCodePostal(&quot;33850&quot;);
-adresse.setLigneAdresse(&quot;22 rue des &#xc3;&#xa9;delweiss&quot;);
-adresse.setComplementAdresse(&quot;compl&#xc3;&#xa9;ment d'adresse&quot;);
+adresse.setLigneAdresse(&quot;22 rue des &#xe9;delweiss&quot;);
+adresse.setComplementAdresse(&quot;compl&#xe9;ment d'adresse&quot;);
 adresse.setVille(&quot;LEOGNAN&quot;);
 adresse.setPays(&quot;FRANCE&quot;);
 patient.setAdresse(adresse);
@@ -315,17 +315,17 @@ td11Request.setOppositionBrisDeGlace(false);
 td11Request.setOppositionUrgence(true);
 
 final TD11Response td11Response = client.td11CreationDmp(context, td11Request);
-final DMPCPatient dmpPatient = td11Response.getPatient(); // patient retourn&#xc3;&#xa9; par le DMP
+final DMPCPatient dmpPatient = td11Response.getPatient(); // patient retourn&#xe9; par le DMP
 Files.write(td11Response.getFormulairePatient(), new File(&quot;./documentAccuseCreation.pdf&quot;)); // fichier PDF contenant le document des secrets
 </pre></div></div>
 </section><section>
-<h3><a name="TD1.5_:.C3.82.C2.A0cr.C3.83.C2.A9er_ou_mettre_.C3.83.C2.A0_jour_le_compte_internet_du_patient"></a>TD1.5 :&#xc2;&#xa0;cr&#xc3;&#xa9;er ou mettre &#xc3;&#xa0; jour le compte internet du patient</h3>
-<p>La fonctionnalit&#xc3;&#xa9; DMP_1.5 permet :</p>
+<h3><a name="TD1.5_:.C2.A0cr.C3.A9er_ou_mettre_.C3.A0_jour_le_compte_internet_du_patient"></a>TD1.5 :&#xa0;cr&#xe9;er ou mettre &#xe0; jour le compte internet du patient</h3>
+<p>La fonctionnalit&#xe9; DMP_1.5 permet :</p>
 <ul>
 
-<li>de cr&#xc3;&#xa9;er le compte internet du patient afin que celui-ci puisse se connecter sur son DMP (DMP_1.5a),</li>
-<li>d&#xe2;&#x20ac;&#x2122;ajouter ou modifier ou supprimer un canal OTP (One Time Password - code d&#xe2;&#x20ac;&#x2122;acc&#xc3;&#xa8;s &#xc3;&#xa0; usage unique) (DMP_1.5b),</li>
-<li>de d&#xc3;&#xa9;bloquer le compte internet patient et de r&#xc3;&#xa9;g&#xc3;&#xa9;n&#xc3;&#xa9;rer les param&#xc3;&#xa8;tres de connexion du patient (DMP_1.5d).</li>
+<li>de cr&#xe9;er le compte internet du patient afin que celui-ci puisse se connecter sur son DMP (DMP_1.5a),</li>
+<li>d&#x2019;ajouter ou modifier ou supprimer un canal OTP (One Time Password - code d&#x2019;acc&#xe8;s &#xe0; usage unique) (DMP_1.5b),</li>
+<li>de d&#xe9;bloquer le compte internet patient et de r&#xe9;g&#xe9;n&#xe9;rer les param&#xe8;tres de connexion du patient (DMP_1.5d).</li>
 </ul>
 <p>Exemple :</p>
 
@@ -333,7 +333,7 @@ Files.write(td11Response.getFormulairePatient(), new File(&quot;./documentAccuse
 <div>
 <pre class="source">DMPCPatient patient = createDMP();
         
-// Cr&#xc3;&#xa9;ation de l'acc&#xc3;&#xa8;s internet
+// Cr&#xe9;ation de l'acc&#xe8;s internet
 TD15aRequest aRequest = new TD15aRequest();
 aRequest.setPatient(patient);
 aRequest.setEmail(&quot;laurent.foret@dev.coop&quot;);
@@ -352,7 +352,7 @@ bRequest.setIns(patient.getIns());
 bRequest.setEmail(&quot;laurent.foret@dev.coop&quot;);
 client.td15bRemoveCanalOTP(context, bRequest);
 
-// D&#xc3;&#xa9;blocage acc&#xc3;&#xa8;s internet patient
+// D&#xe9;blocage acc&#xe8;s internet patient
 TD15cRequest dRequest = new TD15cRequest();
 dRequest.setPatient(patient);
 TD15cResponse response = client.td15dDeblocageAccesInternetPatient(context, dRequest);
@@ -361,45 +361,45 @@ Files.write(response.getFormulairePatient(), new File(&quot;./target/documentDes
 </pre></div></div>
 </section></section><section>
 <h2><a name="Alimentation"></a>Alimentation</h2>
-<p>Le profil alimentation du DMP se fait au travers de transaction XDS (<a class="externalLink" href="https://wiki.ihe.net/index.php/Cross-Enterprise_Document_Sharing">https://wiki.ihe.net/index.php/Cross-Enterprise_Document_Sharing</a>) support&#xc3;&#xa9;e par le serveur DMP ainsi que par la DMPC-API.</p>
-<p>Les transactions XDS&#xc2;&#xa0;permettent de soumettre des documents au format CDA (<a class="externalLink" href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=7">https://www.hl7.org/implement/standards/product_brief.cfm?product_id=7</a>) support&#xc3;&#xa9; &#xc3;&#xa9;galement par le DMP et la DMPC-API.</p>
-<p>La DMPC-API pr&#xc3;&#xa9;sente un mod&#xc3;&#xa8;le simplif&#xc3;&#xa9; des informations demand&#xc3;&#xa9;es et s&#x2019;occupe de la coh&#xc3;&#xa9;rence des m&#xc3;&#xa9;tadonn&#xc3;&#xa9;es des transactions XDS d&#x2019;avec les m&#xc3;&#xa9;tadonn&#xc3;&#xa9;es <a href="../CDA/structurationMinimale.html">des documents CDA</a> )</p><section>
-<h3><a name="TD21_:_alimenter_le_DMP_d.C3.A2.E2.82.AC.E2.84.A2un_patient_avec_des_documents"></a>TD21 : alimenter le DMP d&#xe2;&#x20ac;&#x2122;un patient avec des documents</h3>
-<p>Cette fonctionnalit&#xc3;&#xa9; permet d&#xe2;&#x20ac;&#x2122;alimenter le DMP d&#xe2;&#x20ac;&#x2122;un patient avec un ou plusieurs nouveaux documents :</p>
+<p>Le profil alimentation du DMP se fait au travers de transaction XDS (<a class="externalLink" href="https://wiki.ihe.net/index.php/Cross-Enterprise_Document_Sharing">https://wiki.ihe.net/index.php/Cross-Enterprise_Document_Sharing</a>) support&#xe9;e par le serveur DMP ainsi que par la DMPC-API.</p>
+<p>Les transactions XDS&#xa0;permettent de soumettre des documents au format CDA (<a class="externalLink" href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=7">https://www.hl7.org/implement/standards/product_brief.cfm?product_id=7</a>) support&#xe9; &#xe9;galement par le DMP et la DMPC-API.</p>
+<p>La DMPC-API pr&#xe9;sente un mod&#xe8;le simplif&#xe9; des informations demand&#xe9;es et s&#x2019;occupe de la coh&#xe9;rence des m&#xe9;tadonn&#xe9;es des transactions XDS d&#x2019;avec les m&#xe9;tadonn&#xe9;es <a href="../CDA/structurationMinimale.html">des documents CDA</a> )</p><section>
+<h3><a name="TD21_:_alimenter_le_DMP_d.E2.80.99un_patient_avec_des_documents"></a>TD21 : alimenter le DMP d&#x2019;un patient avec des documents</h3>
+<p>Cette fonctionnalit&#xe9; permet d&#x2019;alimenter le DMP d&#x2019;un patient avec un ou plusieurs nouveaux documents :</p>
 <ul>
 
-<li>d&#xc3;&#xa9;crits sous la forme de documents CDA et de m&#xc3;&#xa9;tadonn&#xc3;&#xa9;es XDS,</li>
-<li>et transmis au syst&#xc3;&#xa8;me DMP sous la forme d&#xe2;&#x20ac;&#x2122;un lot de soumission XDS sign&#xc3;&#xa9; (XAdES).</li>
+<li>d&#xe9;crits sous la forme de documents CDA et de m&#xe9;tadonn&#xe9;es XDS,</li>
+<li>et transmis au syst&#xe8;me DMP sous la forme d&#x2019;un lot de soumission XDS sign&#xe9; (XAdES).</li>
 </ul>
-<p>La cin&#xc3;&#xa9;matique g&#xc3;&#xa9;n&#xc3;&#xa9;rale est la suivante. Le PS constitue le ou les document(s) dans le LPS . Le LPS :</p>
+<p>La cin&#xe9;matique g&#xe9;n&#xe9;rale est la suivante. Le PS constitue le ou les document(s) dans le LPS . Le LPS :</p>
 <ul>
 
 <li>construit le ou les document(s)
 <ul>
 
-<li>construit le document au format CDA ==&gt; action r&#xc3;&#xa9;alis&#xc3;&#xa9;e par la DMPC-API</li>
-<li>alimente les m&#xc3;&#xa9;tadonn&#xc3;&#xa9;es XDS  ==&gt; action r&#xc3;&#xa9;alis&#xc3;&#xa9;e par la DMPC-API</li>
+<li>construit le document au format CDA ==&gt; action r&#xe9;alis&#xe9;e par la DMPC-API</li>
+<li>alimente les m&#xe9;tadonn&#xe9;es XDS  ==&gt; action r&#xe9;alis&#xe9;e par la DMPC-API</li>
 </ul>
 </li>
-<li>constitue un lot de soumission XDS et signe ce lot (XAdES) ==&gt; action r&#xc3;&#xa9;alis&#xc3;&#xa9;e par la DMPC-API</li>
-<li>soumet le lot de documents au syst&#xc3;&#xa8;me DMP  ==&gt; action r&#xc3;&#xa9;alis&#xc3;&#xa9;e par la DMPC-API</li>
+<li>constitue un lot de soumission XDS et signe ce lot (XAdES) ==&gt; action r&#xe9;alis&#xe9;e par la DMPC-API</li>
+<li>soumet le lot de documents au syst&#xe8;me DMP  ==&gt; action r&#xe9;alis&#xe9;e par la DMPC-API</li>
 </ul>
-<p>Le LPS int&#xc3;&#xa9;grateur de la DMPC-API doit seulement fournir les valeurs des diff&#xc3;&#xa9;rentes m&#xc3;&#xa9;tadonn&#xc3;&#xa9;es li&#xc3;&#xa9;es aux documents et &#xc3;&#xa0; la soumission par l&#x2019;interm&#xc3;&#xa9;diaire d&#x2019;un mod&#xc3;&#xa8;le simplifi&#xc3;&#xa9; :</p>
+<p>Le LPS int&#xe9;grateur de la DMPC-API doit seulement fournir les valeurs des diff&#xe9;rentes m&#xe9;tadonn&#xe9;es li&#xe9;es aux documents et &#xe0; la soumission par l&#x2019;interm&#xe9;diaire d&#x2019;un mod&#xe8;le simplifi&#xe9; :</p>
 <p>Exemple :</p>
 
 <div>
 <div>
-<pre class="source">//   cr&#xc3;&#xa9;ation du document
+<pre class="source">//   cr&#xe9;ation du document
 DMPCDocument document = new DMPCDocument();
 document.addConfidentiality(&quot;N&quot;);  // dans la nomenclature DMPCCode.ASIPJeuxValeurs.CONFIDENTIALITY_CODE
 document.setComments(&quot;Commentaire du Document&quot;);
-document.addEvent(new DMPCCode(&quot;B18&quot;, &quot;2.16.840.1.113883.6.3&quot;, &quot;H&#xc3;&#xa9;patite virale chronique&quot;));
+document.addEvent(new DMPCCode(&quot;B18&quot;, &quot;2.16.840.1.113883.6.3&quot;, &quot;H&#xe9;patite virale chronique&quot;));
 document.setPracticeSetting(&quot;AMBULATOIRE);
 document.setServiceStartTime(maintenant.toString());
 document.setServiceStopTime(maintenant.toString());
 document.setTitle(&quot;Titre du Document&quot;);
 document.setType(&quot;11488-4&quot;); // dans la nomenclature DMPCCode.ASIPJeuxValeurs.TYPE_CODE
-// document.setClassCode(&quot;&quot;); // non n&#xc3;&#xa9;cessaire car d&#xc3;&#xa9;duit du type code pour la liste des valeurs possibles aller dans la nomenclature DMPCCode.ASIPJeuxValeurs.CLASS_CODE
+// document.setClassCode(&quot;&quot;); // non n&#xe9;cessaire car d&#xe9;duit du type code pour la liste des valeurs possibles aller dans la nomenclature DMPCCode.ASIPJeuxValeurs.CLASS_CODE
 document.setCreationTime(maintenant.toString());
 document.setFormat(&quot;urn:ihe:iti:xds-sd:pdf:2008&quot;);  // dans la nomenclature DMPCCode.ASIPJeuxValeurs.FORMAT_CODE
 InputStream input = this.getClass().getClassLoader().getResourceAsStream(&quot;1.pdf&quot;);
@@ -407,7 +407,7 @@ byte[] content = new byte[input.available()];
 ByteStreams.readFully(input, content);
 document.setContent(content);
 
-//    cr&#xc3;&#xa9;ation de la soumission 
+//    cr&#xe9;ation de la soumission 
 DMPCSubmission submission = new DMPCSubmission();
 submission.setPatient(patient);
 submission.setComments(&quot;Commentaire Soumission du document&quot;);
@@ -418,7 +418,7 @@ submission.addDocument(document);
 
 //   envoi de la soumission
 TD21Response td21Response = client.td21SubmitDocuments(context, new TD21Request(submission));
-System.out.println(&quot;Soumission enregistr&#xc3;&#xa9; avec l'uuid :&quot; + td21Response.getSubmission().getUuid());
+System.out.println(&quot;Soumission enregistr&#xe9; avec l'uuid :&quot; + td21Response.getSubmission().getUuid());
 
 for (DMPCDocument submittedDocument : td21Response.getSubmission().getDocuments()) {
     System.out.println(String.format(&quot;Contenant le document ayant pour uniqueId : %s et uuid : %s&quot;,
@@ -427,7 +427,7 @@ for (DMPCDocument submittedDocument : td21Response.getSubmission().getDocuments(
 }
 </pre></div></div>
 
-<p>Pour une soumission de plusieurs documents, il suffit d&#x2019;ajouter les documents &#xc3;&#xa0; la soumission :</p>
+<p>Pour une soumission de plusieurs documents, il suffit d&#x2019;ajouter les documents &#xe0; la soumission :</p>
 
 <div>
 <div>
@@ -435,34 +435,34 @@ for (DMPCDocument submittedDocument : td21Response.getSubmission().getDocuments(
 submission.addDocument(document2);
 </pre></div></div>
 </section><section>
-<h3><a name="TD31b_:_rechercher_l.C3.A2.E2.82.AC.E2.84.A2identifiant_technique_d.C3.A2.E2.82.AC.E2.84.A2un_document"></a>TD31b : rechercher l&#xe2;&#x20ac;&#x2122;identifiant technique d&#xe2;&#x20ac;&#x2122;un document</h3>
-<p>Cette fonctionnalit&#xc3;&#xa9; permet, aux LPS qui n&#xe2;&#x20ac;&#x2122;impl&#xc3;&#xa9;mentent pas DMP_3.1a, de rechercher l&#xe2;&#x20ac;&#x2122;identifiant technique d&#xe2;&#x20ac;&#x2122;un document (dans le syst&#xc3;&#xa8;me DMP) &#xc3;&#xa0; partir de l&#xe2;&#x20ac;&#x2122;identifiant local au LPS de ce document. Le LPS peut ensuite supprimer (DMP_3.3c), archiver (DMP_3.3d) ou remplacer un document dans le DMP du patient (DMP_2.1/2.2b).</p>
+<h3><a name="TD31b_:_rechercher_l.E2.80.99identifiant_technique_d.E2.80.99un_document"></a>TD31b : rechercher l&#x2019;identifiant technique d&#x2019;un document</h3>
+<p>Cette fonctionnalit&#xe9; permet, aux LPS qui n&#x2019;impl&#xe9;mentent pas DMP_3.1a, de rechercher l&#x2019;identifiant technique d&#x2019;un document (dans le syst&#xe8;me DMP) &#xe0; partir de l&#x2019;identifiant local au LPS de ce document. Le LPS peut ensuite supprimer (DMP_3.3c), archiver (DMP_3.3d) ou remplacer un document dans le DMP du patient (DMP_2.1/2.2b).</p>
 <p>Exemple :</p>
 
 <div>
 <div>
-<pre class="source">String previousDocumentUniqueId = ...; // uniqueId d'un document envoy&#xc3;&#xa9; pr&#xc3;&#xa9;c&#xc3;&#xa9;demment dans le DMP 
+<pre class="source">String previousDocumentUniqueId = ...; // uniqueId d'un document envoy&#xe9; pr&#xe9;c&#xe9;demment dans le DMP 
 TD31bRequest td31bRequest = new TD31bRequest();
 td31bRequest.setDocumentUniqueId(previousDocumentUniqueId());
 td31bRequest.setIns(patient.getIns());
 TD31bResponse response = client.td31bGetDocumentEntry(context, td31bRequest);
 
-// uuid du document courant stock&#xc3;&#xa9; dans le DMP
+// uuid du document courant stock&#xe9; dans le DMP
 String documentCurrentUuid = response.getDocumentUuid();
 // permet le remplacement de document avec une td21submit document ou encore une td33cUnpublished.
 </pre></div></div>
 
-<p>Exemple de remplacement de document apr&#xc3;&#xa8;s recherche dans le DMP :</p>
+<p>Exemple de remplacement de document apr&#xe8;s recherche dans le DMP :</p>
 
 <div>
 <div>
-<pre class="source">// r&#xc3;&#xa9;cup&#xc3;&#xa9;ration du uuid du document courant dans le DMP
+<pre class="source">// r&#xe9;cup&#xe9;ration du uuid du document courant dans le DMP
 TD31bRequest td31bRequest = new TD31bRequest();
 td31bRequest.setDocumentUniqueId(uniqueIdDuDocumentAremplacer);
 td31bRequest.setIns(patient.getIns());
 TD31bResponse td31bresponse = client.td31bGetDocumentEntry(context, td31bRequest);
 
-// cr&#xc3;&#xa9;ation de la soummission pour le remplacement
+// cr&#xe9;ation de la soummission pour le remplacement
 DMPCSubmission submissionRemplace = ...;
 DMPCDocument documentRemplace = ...;
 // ajout des informations de remplacement dans le document qui remplace
@@ -473,13 +473,13 @@ submissionRemplace.setTitle(&quot;remplacement du document E&quot;);
 client.td21SubmitDocuments(context, new TD21Request(submissionRemplaceE));
 </pre></div></div>
 </section><section>
-<h3><a name="TD33c_:.C3.82.C2.A0Supprimer_un_document"></a>TD33c :&#xc2;&#xa0;Supprimer un document</h3>
-<p>Cette fonctionnalit&#xc3;&#xa9; permet &#xc3;&#xa0; l&#xe2;&#x20ac;&#x2122;utilisateur de supprimer un document dans le DMP d&#xe2;&#x20ac;&#x2122;un patient. La cin&#xc3;&#xa9;matique g&#xc3;&#xa9;n&#xc3;&#xa9;rale est la suivante :</p>
+<h3><a name="TD33c_:.C2.A0Supprimer_un_document"></a>TD33c :&#xa0;Supprimer un document</h3>
+<p>Cette fonctionnalit&#xe9; permet &#xe0; l&#x2019;utilisateur de supprimer un document dans le DMP d&#x2019;un patient. La cin&#xe9;matique g&#xe9;n&#xe9;rale est la suivante :</p>
 <ul>
 
-<li>L&#xe2;&#x20ac;&#x2122;utilisateur indique qu&#xe2;&#x20ac;&#x2122;il souhaite supprimer le document s&#xc3;&#xa9;lectionn&#xc3;&#xa9;.</li>
-<li>L&#xe2;&#x20ac;&#x2122;utilisateur confirme l&#xe2;&#x20ac;&#x2122;action demand&#xc3;&#xa9;e.</li>
-<li>Le LPS envoie une requ&#xc3;&#xaa;te de mise &#xc3;&#xa0; jour des attributs d&#xe2;&#x20ac;&#x2122;un document au syst&#xc3;&#xa8;me DMP</li>
+<li>L&#x2019;utilisateur indique qu&#x2019;il souhaite supprimer le document s&#xe9;lectionn&#xe9;.</li>
+<li>L&#x2019;utilisateur confirme l&#x2019;action demand&#xe9;e.</li>
+<li>Le LPS envoie une requ&#xea;te de mise &#xe0; jour des attributs d&#x2019;un document au syst&#xe8;me DMP</li>
 </ul>
 <p>Exemple :</p>
 
@@ -488,7 +488,7 @@ client.td21SubmitDocuments(context, new TD21Request(submissionRemplaceE));
 <pre class="source">TD33CRequest td33cRequest = new TD33CRequest();
 td33cRequest.setDocumentUuid(uniqueIdDuDocumentASupprimer);
 td33cRequest.setIns(patient.getIns()); 
-td33cRequest.setContentType(contentTypeDuDocumentASupprimer); // le contentType est le m&#xc3;&#xaa;me que pour une soumission de document.
+td33cRequest.setContentType(contentTypeDuDocumentASupprimer); // le contentType est le m&#xea;me que pour une soumission de document.
 client.td33cUnpublished(context, td33cRequest);
 </pre></div></div></section></section>
         </main>

@@ -463,17 +463,17 @@ Files.write(response.getFormulairePatient(), new File(&quot;./target/documentDes
 <div class="source">
 <div class="source"><pre class="prettyprint linenums">//   cr&#xe9;ation du document
 DMPCDocument document = new DMPCDocument();
-document.setClassCode(client.getCodesFor(DMPCCode.ASIPJeuxValeurs.CLASS_CODE).get(0).getCode());
-document.addConfidentiality(&quot;N&quot;);
+document.addConfidentiality(&quot;N&quot;);  // dans la nomenclature DMPCCode.ASIPJeuxValeurs.CONFIDENTIALITY_CODE
 document.setComments(&quot;Commentaire du Document&quot;);
 document.addEvent(new DMPCCode(&quot;B18&quot;, &quot;2.16.840.1.113883.6.3&quot;, &quot;H&#xe9;patite virale chronique&quot;));
 document.setPracticeSetting(&quot;AMBULATOIRE);
 document.setServiceStartTime(maintenant.toString());
 document.setServiceStopTime(maintenant.toString());
 document.setTitle(&quot;Titre du Document&quot;);
-document.setType(&quot;11488-4&quot;);
+document.setType(&quot;11488-4&quot;); // dans la nomenclature DMPCCode.ASIPJeuxValeurs.TYPE_CODE
+// document.setClassCode(&quot;&quot;); // non n&#xe9;cessaire car d&#xe9;duit du type code pour la liste des valeurs possibles aller dans la nomenclature DMPCCode.ASIPJeuxValeurs.CLASS_CODE
 document.setCreationTime(maintenant.toString());
-document.setFormat(&quot;urn:ihe:iti:xds-sd:pdf:2008&quot;);
+document.setFormat(&quot;urn:ihe:iti:xds-sd:pdf:2008&quot;);  // dans la nomenclature DMPCCode.ASIPJeuxValeurs.FORMAT_CODE
 InputStream input = this.getClass().getClassLoader().getResourceAsStream(&quot;1.pdf&quot;);
 byte[] content = new byte[input.available()];
 ByteStreams.readFully(input, content);

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20200312" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>DMPC-API : Le connecteur DMP par DEVCOOP &#x2013; </title>
+    <title>DMPC-API : Le connecteur DMP par DEVCOOP &#x2013; Alimentation Génération des UniqueId</title>
     <link rel="stylesheet" href="../../css/apache-maven-fluido-1.6.min.css" />
     <link rel="stylesheet" href="../../css/site.css" />
     <link rel="stylesheet" href="../../css/print.css" media="print" />
@@ -70,16 +70,34 @@
           </div>
         </div>
         <div id="bodyColumn"  class="span10" >
-<p>[Alimentation] G&#xe9;n&#xe9;ration des UniqueId </p>
+<h1>[Alimentation] G&#xe9;n&#xe9;ration des UniqueId</h1>
 <p>Afin d&#x2019;&#xea;tre totalement conforme &#xe0; l&#x2019;exigence EX_2.1-1130.</p>
 
 <blockquote>
-<p>Chaque document et lot de document(s) produit par un LPS doit &#xea;tre identifi&#xe9; par un identifiant universel (champ XDS uniqueId au format OID) :  * soit le uniqueId est g&#xe9;n&#xe9;r&#xe9; &#xe0; partir d&#x2019;un UUID (sous la branche OID 2.25), dans ce cas cet OID doit &#xea;tre stock&#xe9; dans le LPS pour les recherches / remplacements futurs via ce m&#xea;me LPS ;  * soit le uniqueId est g&#xe9;n&#xe9;r&#xe9; &#xe0; partir d&#x2019;une racine propre &#xe0; l&#x2019;installation du LPS et d&#x2019;un &#xe9;l&#xe9;ment &#xab; variable &#xbb; mais unique vis-&#xe0;-vis de la racine de l&#x2019;instance du LPS install&#xe9;e (par exemple horodatage, ou identifiant interne du document dans le LPS) ; il incombe au LPS de pouvoir retrouver ce uniqueId pour les recherches / remplacements futurs via ce m&#xea;me LPS (par exemple en stockant le uniqueId ainsi g&#xe9;n&#xe9;r&#xe9;, ou la partie variable uniquement &#xe0; condition de savoir reconstruire le uniqueId complet).</p>
+<p>Chaque document et lot de document(s) produit par un LPS doit &#xea;tre identifi&#xe9; par un identifiant universel (champ XDS uniqueId au format OID) :</p>
+  
+<ul>
+    
+<li>
+<p>soit le uniqueId est g&#xe9;n&#xe9;r&#xe9; &#xe0; partir d&#x2019;un UUID (sous la branche OID 2.25), dans ce cas cet OID doit &#xea;tre stock&#xe9; dans le LPS pour les recherches / remplacements futurs via ce m&#xea;me LPS ;</p></li>
+    
+<li>
+<p>soit le uniqueId est g&#xe9;n&#xe9;r&#xe9; &#xe0; partir d&#x2019;une racine propre &#xe0; l&#x2019;installation du LPS et d&#x2019;un &#xe9;l&#xe9;ment &#xab; variable &#xbb; mais unique vis-&#xe0;-vis de la racine de l&#x2019;instance du LPS install&#xe9;e (par exemple horodatage, ou identifiant interne du document dans le LPS) ; il incombe au LPS de pouvoir retrouver ce uniqueId pour les recherches / remplacements futurs via ce m&#xea;me LPS (par exemple en stockant le uniqueId ainsi g&#xe9;n&#xe9;r&#xe9;, ou la partie variable uniquement &#xe0; condition de savoir reconstruire le uniqueId complet).</p></li>
+  </ul>
 </blockquote>
 <p>La DMPC-API fournit les deux impl&#xe9;mentations demand&#xe9;es dans cette exigence. C&#x2019;est &#xe0; l&#x2019;int&#xe9;grateur de la choisir.</p>
 <div class="section">
 <h2><a name="Bas_sur_la_Source"></a>Bas&#xe9; sur la Source</h2>
 <p>L&#x2019;impl&#xe9;mentation par d&#xe9;faut est bas&#xe9;e sur les param&#xe8;tres de la source. Elle est conforme au deuxi&#xe8;me point de l&#x2019;exigence :</p>
+<p>La source est d&#xe9;finie par les deux param&#xe8;tres de l&#x2019;<tt>application.yml</tt> : <tt>yml
+dmpc:
+   source:
+        # 1.2.250.1.287 est l'OID de Devcoop
+        # 1.2.250.1.287.1 est l'OID correspondant &#xe0; la DMPC pour Devcoop
+        idRoot: 1.2.250.1.287.1
+        idExtension: 1234567
+</tt></p>
+<p>L&#x2019;impl&#xe9;mentation ressemble &#xe0; cela :</p>
 
 <div class="source">
 <div class="source"><pre class="prettyprint linenums">/**

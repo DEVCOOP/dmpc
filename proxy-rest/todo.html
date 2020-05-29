@@ -129,36 +129,8 @@
         <div id="bodyColumn" >
                                   
             <div class="section">
-<h2><a name="DMPCProxy_Configuration"></a>DMPCProxy Configuration </h2>
-<div class="section">
-<h3><a name="Installation"></a>Installation </h3>
-<div class="source"><pre class="prettyprint linenums">%&gt; wget http://repo.dev.coop/nexus/content/repositories/snapshots/fr/devcoop/dmpc/dmpc-proxy-ws/3.x/dmpc-proxy-ws-3.x-bin.zip
-%&gt; unzip dmpc-proxy-ws-3.x-bin.zip
-%&gt; cd dmpc-proxy-ws-bin
-</pre></div></div>
-<div class="section">
-<h3><a name="Configuration_du_serveur_Proxy"></a>Configuration du serveur Proxy</h3>
-<p>Le serveur proxy-ws est une application spring-boot configurable par l'interm&#xe9;diaire d'un fichier <tt>application.yml</tt>. Les param&#xe8;tres configurables sont, l'url du serveur DMP, les informations concernant les certificats serveurs, ...</p>
-<p>Exemple : </p>
-<div class="source"><pre class="prettyprint linenums">dmpc:
-    # url du serveur DMP
-    url.prefix:
-            https://dev1.lps2.dmp.gouv.fr/si-dmp-server/v2/services
-</pre></div></div>
-<div class="section">
-<h3><a name="Lancement_du_serveur"></a>Lancement du serveur </h3>
-<div class="source"><pre class="prettyprint linenums">%&gt; java -Dspring.config.location=application.yml -jar dmpc-proxy-ws.jar 
-</pre></div></div></div>
-<div class="section">
-<h2><a name="Le_wsdl_du_serveur_est_accessible_modulo_la_configuration_de_port_dans_le_fichier_application.yml__lurl_suivante_:_http:localhost:9999servicesdmpcProxywsdl"></a>Le wsdl du serveur est accessible (modulo la configuration de port dans le fichier <tt>application.yml</tt>) &#xe0; l'url suivante : http://localhost:9999/services/dmpcProxy?wsdl</h2>
-<div class="section">
-<h3><a name="Certificats_serveurs"></a>Certificats serveurs</h3>
-<p>Le fichier de configuration <tt>application.yml</tt> fait &#xe9;tat de 2 fichiers contenant les keystores suivant :</p>
-<ul>
-<li>un keystore SSL : contenant la cl&#xe9; priv&#xe9; et le certificat permettant la connexion TLS avec le serveur DMP</li>
-<li>un keystore SMime : contenant la cl&#xe9; priv&#xe9; et le certificat permettant la signature du VIHF (Vecteur d'Itentification et d'Habilitation Formelle) et des soumissions.
-<p>Ils correspondent &#xe0; ce que nous pouvons trouver sur l'annuaire du GIP-CPS : <a class="externalLink" href="http://http://annuaire.gip-cps.fr/"></a></p><img src="../certifServeurSurAnnuaire-gip-cps.png" alt="" />
-<p>A ce certificat serveur correspond le secteur d'activit&#xe9; RPPS <b>SA43</b>, c'est celui l&#xe0; qui doit &#xea;tre utilis&#xe9; pour structureActivite de l'auteur :</p><img src="../certifServeurSurAnnuaire-gip-cps-2.png" alt="" /></li></ul></div></div>
+<h2><a name="TODO"></a>TODO</h2>
+<p>Il est pr&#xe9;vue de fournir bient&#xf4;t les fonctionnalit&#xe9;s de proxy DMP au travers d'une API REST.</p></div>
                   </div>
           </div>
 

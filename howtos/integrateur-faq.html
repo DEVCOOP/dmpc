@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20210301" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>DMPC-API : Le connecteur DMP par DEVCOOP &#x2013; La DMPC-API en mode REST</title>
+    <title>DMPC-API : Le connecteur DMP par DEVCOOP &#x2013; TD2.1 Alimentation</title>
     <link rel="stylesheet" href="../css/apache-maven-fluido-1.6.min.css" />
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/print.css" media="print" />
@@ -52,8 +52,7 @@
     <li><a href="../embedded/transactions.html" title="Transactions supportées"><span class="none"></span>Transactions supportées</a>  </li>
     <li><a href="../embedded/howtos/uniqueIdGenerator.html" title="Howto : UniqueId"><span class="none"></span>Howto : UniqueId</a>  </li>
           <li class="nav-header">Proxy REST</li>
-    <li class="active"><a href="#"><span class="none"></span>Proxy REST / Lancer</a>
-  </li>
+    <li><a href="../proxy-rest/proxy-rest.html" title="Proxy REST / Lancer"><span class="none"></span>Proxy REST / Lancer</a>  </li>
           <li class="nav-header">Proxy WS</li>
     <li><a href="../proxy-ws/firstStepProxyWS.html" title="Proxy WS / Commencer"><span class="none"></span>Proxy WS / Commencer</a>  </li>
     <li><a href="../proxy-ws/configurationServeurProxy.html" title="Proxy WS / Configurer"><span class="none"></span>Proxy WS / Configurer</a>  </li>
@@ -74,24 +73,9 @@
           </div>
         </div>
         <div id="bodyColumn"  class="span10" >
-<h1>La DMPC-API en mode REST</h1>
-<p>le proxy REST est un programme java qui re&#xe7;oit les requetes simples et les retransmet au DMP dans le bon formalisme et dans le respect des diff&#xe9;rentes transactions, il interpr&#xe8;te les r&#xe9;ponses du serveur DMP et les retourne au client initial dans un formalisme simplifi&#xe9;.</p><section>
-<h2><a name="Commencer_avec_la_DMPC-API_en_mode_PROXY_REST"></a>Commencer avec la DMPC-API en mode PROXY REST</h2>
-<p>Nous avons mis en place une plateforme de d&#xe9;monstration, vous permettant d&#x2019;exp&#xe9;rimenter tout de suite la dmpc-api. Elle permet d&#x2019;acc&#xe9;der &#xe0; l&#x2019;environnement de test du DMP et d&#x2019;ex&#xe9;cuter l&#x2019;ensemble des transactions possibles en authentification indirecte.</p>
-<p><a class="externalLink" href="https://dmpc-demo.devbox-sante.fr/swagger-ui.html">https://dmpc-demo.devbox-sante.fr/swagger-ui.html</a></p>
-<p>Vous pouvez &#xe9;galement ex&#xe9;cuter les requetes de la <a class="externalLink" href="https://www.postman.com/collections/a66f5c37dd5f8dd67018">collection Postman</a></p>
-<p>N&#x2019;h&#xe9;sitez pas &#xe0; nous demander des identifiants de connexion :&#xa0;<a class="externalLink" href="mailto:devbox-sante@devcoop.fr">Contactez-nous</a></p></section><section>
-<h2><a name="Le_lancer_dans_votre_environnement_de_d.C3.A9veloppement"></a>Le lancer dans votre environnement de d&#xe9;veloppement</h2>
-<p>Pour d&#xe9;marrer le serveur, depuis une ligne de commande ex&#xe9;cuter :</p>
-
-<div class="source">
-<div class="source"><pre class="prettyprint linenums">$&gt; java -Dspring.config.location=application.yml -jar dmpc-proxy-rest.jar
-</pre></div></div>
-
-<p>Au lancement du serveur est charg&#xe9; un fichier de configuration <code>application.yml</code> permettant de charger diff&#xe9;rents KeyStore les informations concernant le LPS et le serveur DMP. Il est initialis&#xe9; par d&#xe9;faut sur un environnement de test.</p>
-<p>Une fois d&#xe9;marr&#xe9;, le serveur est accessible &#xe0; l&#x2019;url suivante : <a class="externalLink" href="http://127.0.0.1:8080/proxy">http://127.0.0.1:8080/proxy</a></p>
-<p>Pour obtenir, le sch&#xe9;ma Swagger : <a class="externalLink" href="http://127.0.0.1:8080/swagger-ui.html">http://127.0.0.1:8080/swagger-ui.html</a></p>
-<p><img src="./dmpcProxyRest-SwaggerUI.png" alt="Exemple schéma Swagger pour la DMPC-API en mode REST" /></p></section>
+<h1>TD2.1 Alimentation</h1><section>
+<h2><a name="Quelles_sont_les_donn.C3.A9es_patients_obligatoires_pour_une_alimentation_:"></a>Quelles sont les donn&#xe9;es patients obligatoires pour une alimentation :</h2>
+<p>Dans le guide d&#x2019;int&#xe9;gration les r&#xe8;gles RG_2340 et RG_2350.</p></section>
         </div>
       </div>
     </div>

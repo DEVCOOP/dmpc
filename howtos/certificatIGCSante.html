@@ -77,11 +77,29 @@
 <h1>Obtention de certificats serveurs en authentification Indirecte</h1>
 <p>Une nouvelle IGC Sant&#xe9; a &#xe9;t&#xe9; mise en place courant 2016 : <a class="externalLink" href="http://integrateurs-cps.asipsante.fr/IGC-Sante">http://integrateurs-cps.asipsante.fr/IGC-Sante</a></p>
 <p>Afin d&#x2019;utiliser le connecteur DevBox-Sant&#xe9; DMP en mode authentification indirecte, il vous faut obtenir des certificats serveurs provenant de cette autorit&#xe9;. Pour cel&#xe0; apr&#xe8;s avoir command&#xe9; des cartes CPS vous pouvez faire une demande &#xe0; partir d&#x2019;un t&#xe9;l&#xe9;service dont la proc&#xe9;dure est d&#xe9;crite ici.</p><section>
-<h2><a name="Proc.C3.A9dure_Administrative"></a>Proc&#xe9;dure Administrative</h2>
+<h2><a name="Proc.C3.A9dure_Administrative"></a>Proc&#xe9;dure Administrative</h2><section>
+<h3><a name="a.C2.A0R.C3.A8gle_g.C3.A9n.C3.A9rale"></a>&#xa0;R&#xe8;gle g&#xe9;n&#xe9;rale</h3>
 <p>Pour obtenir, les certificats et cl&#xe9;s n&#xe9;cessaires pour la connexion au DMP en authentification indirecte, il faut que votre &#xe9;tablissement soit enregistr&#xe9; au FINESS (Fichier National des &#xc9;tablissements Sanitaires es Sociaux) :&#xa0;<a class="externalLink" href="http://finess.sante.gouv.fr/fininter/jsp/index.jsp">http://finess.sante.gouv.fr/fininter/jsp/index.jsp</a></p>
-<p>Les personnes pouvant remplir les conditions d&#x2019;obtentions des certificats sont d&#xe9;crites dans le document de l&#x2019;ANS :&#xa0;<a class="externalLink" href="https://esante.gouv.fr/media/3827">Proc&#xe9;dure DMP - Structures salari&#xe9;es</a></p></section><section>
+<p>Les personnes pouvant remplir les conditions d&#x2019;obtentions des certificats sont d&#xe9;crites dans le document de l&#x2019;ANS :&#xa0;<a class="externalLink" href="https://esante.gouv.fr/media/3827">Proc&#xe9;dure DMP - Structures salari&#xe9;es</a></p>
+<p>Les principes g&#xe9;n&#xe9;raux sont les suivants :</p>
+<blockquote>
+
+<p>Lors du raccordement au DMP, chaque site g&#xe9;ographique d&#x2019;un &#xe9;tablissement de sant&#xe9; s&#x2019;authentifie et s&#x2019;identifie via son num&#xe9;ro de FINESS g&#xe9;ographique.</p>
+<ul>
+
+<li>Ainsi, chaque site doit g&#xe9;n&#xe9;rer des certificats d&#x2019;organisation sur son num&#xe9;ro de FINESS g&#xe9;ographique.</li>
+<li>L&#x2019;administrateur technique est une personne de confiance &#xe0; qui le repr&#xe9;sentant l&#xe9;gal de l&#x2019;&#xe9;tablissement d&#xe9;l&#xe8;gue le droit de g&#xe9;rer le cycle de vie des certificats logiciels command&#xe9;s.</li>
+</ul>
+<p>Il est &#xe9;galement possible pour le repr&#xe9;sentant l&#xe9;gal d&#x2019;une structure de d&#xe9;signer un ou plusieurs mandataires pour sa structure.</p>
+</blockquote></section><section>
+<h3><a name="Quels_certificats_.3F"></a>Quels certificats ?</h3>
+<blockquote>
+
+<p>Pour acc&#xe9;der au DMP en authentification indirecte (cr&#xe9;ation/gestion administrative et alimentation), vous avez besoin de d&#xe9;ployer les certificats suivants : - un certificat client de type ORG AUTH_CLI pour s&#x2019;authentifier au DMP ; - un certificat client de type ORG SIGN pour signer les lots de documents soumis au DMP</p>
+</blockquote>
+<p>L&#x2019;dministrateur technique doit commander les certificats via le formulaire n&#xb0;413 et le retourner &#xe0; <a class="externalLink" href="mailto:monserviceclient.certificats@asipsante.fr">monserviceclient.certificats@asipsante.fr</a> Le formulaire peut &#xea;tre t&#xe9;l&#xe9;charger depuis le site : <a class="externalLink" href="https://esante.gouv.fr/securite/cartes-et-certificats/commandes">https://esante.gouv.fr/securite/cartes-et-certificats/commandes</a></p></section></section><section>
 <h2><a name="Proc.C3.A9dure_Technique"></a>Proc&#xe9;dure Technique</h2>
-<p>Il est possible de les commander sur un site web mis &#xe0; disposition par l&#x2019;ANS. Il s&#x2019;agit d&#x2019;un service permettant la commande de certificats et cartes :&#xa0;</p>
+<p>Il est possible de commander ces certificats sur le site web mis &#xe0; disposition par l&#x2019;ANS. Il s&#x2019;agit d&#x2019;un service permettant la commande de certificats et cartes :&#xa0;</p>
 <p><a class="externalLink" href="https://pfc.eservices.esante.gouv.fr">https://pfc.eservices.esante.gouv.fr</a></p>
 <p>Pour pouvoir y acc&#xe9;der il faut se connecter avec un lecteur de cartes CPS configur&#xe9; et une carte CPA autoris&#xe9;e au pr&#xe9;alable :</p>
 <p><img src="./pfcngAccueil.PNG" alt="pfcng" /></p><section>

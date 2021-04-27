@@ -124,25 +124,27 @@
 </ul>
 <p><img src="./pfcngDemandeStep3Auth.PNG" alt="pfcng" /></p></section><section>
 <h5><a name="a.C3.89tape_4_:"></a>&#xc9;tape 4 :</h5>
-<p><img src="./pfcngDemandeStep4GenerateCSR.PNG" alt="pfcng" /></p>
 <p>Pour cette &#xe9;tape le plus simple est de g&#xe9;n&#xe9;rer la CSR&#xa0;sur le site, mais pas obligatoire.</p>
 <ul>
 
 <li>Saisir un mot de passe assez fort pour convenir au service, et sauvegarder le car il sera demand&#xe9; lors de la r&#xe9;cup&#xe9;ration du certificats P12, ainsi que pour configurer la DevBox-Sant&#xe9; DMP.</li>
 <li>Cliquer sur &#x201c;G&#xe9;n&#xe9;rer la CSR&#x201d;, puis &#x201c;Finaliser&#x201d;</li>
-</ul></section><section>
-<h5><a name="a.C3.89tape_5_:"></a>&#xc9;tape 5 :</h5>
-<p>Vous recevez un email de confirmation de la demande &#xe0; l&#x2019;adresse (correspondant &#xe0; la carte CPS enregistr&#xe9;e, ou &#xe0; l&#x2019;email saisie &#xe0; l&#x2019;&#xe9;tape 3, TOCHECK) :</p>
-<p><img src="./pfcngDemandeMailRecap.PNG" alt="pfcng" /></p></section></section><section>
-<h4><a name="R.C3.A9cup.C3.A9rer"></a>R&#xe9;cup&#xe9;rer</h4>
-<p>Vous recevez un deuxi&#xe8;me mail contenant un lien permettant de r&#xe9;cup&#xe9;rer le certificat sur ce m&#xea;me site.</p><section>
-<h5><a name="a.C3.89tape_2:"></a>&#xc9;tape 2:</h5>
-<p>Saisir un nouveau mot de passe pour les r&#xe9;vocations (non utilis&#xe9; dans l&#x2019;API)</p>
-<ul>
-
-<li>Finalisation</li>
 </ul>
-<p>Le certificat/cl&#xe9; (p12) a un nom qui doit ressembler &#xe0; asip-p12-EL-TEST-ORG-AUTH_CLI-20170603-173116.p12</p></section></section></section><section>
+<p><img src="./pfcngDemandeStep4GenerateCSR.PNG" alt="pfcng" /></p></section><section>
+<h5><a name="a.C3.89tape_5_:"></a>&#xc9;tape 5 :</h5>
+<p>Vous recevez un email de confirmation de la demande &#xe0; l&#x2019;email saisie &#xe0; l&#x2019;&#xe9;tape 3 :</p></section></section><section>
+<h4><a name="Retirer"></a>Retirer</h4>
+<p>Depuis l&#x2019;&#xe9;tape 5&#xa0;de la demande vous pouvez acc&#xe9;der au retrait du certificat command&#xe9;. Sinon vous pouvez y acc&#xe9;der par le menu Retirer</p><section>
+<h5><a name="a.C3.89tape_1:"></a>&#xc9;tape 1:</h5>
+<p>Cette &#xe9;tape consiste &#xe0; choisir le produit &#xe0; retirer</p>
+<p><img src="./pfcngRetirerStep1.PNG" alt="pfcng" /></p></section><section>
+<h5><a name="a.C3.89tape_2:"></a>&#xc9;tape 2:</h5>
+<p>Dans cette &#xe9;tape, il faut saisir un nouveau mot de passe pour les r&#xe9;vocations (identique ou pas de celui de la CSR). Il n&#x2019;est pas utilis&#xe9; dans l&#x2019;API mais peut servir &#xe0; l&#x2019;administrateur technique.</p>
+<p><img src="./pfcngRetirerStep2.PNG" alt="pfcng" /></p></section></section><section>
+<h4><a name="a.C3.89tape_3:_Finalisation"></a>&#xc9;tape 3: Finalisation</h4>
+<p>Dans cette &#xe9;tape, il faut saisir le mot de passe de r&#xe9;conciliation celui qui a permis de g&#xe9;n&#xe9;rer la CSR.</p>
+<p><img src="./pfcngRetirerStep3.PNG" alt="pfcng" /></p>
+<p>Le certificat/cl&#xe9; (p12) a un nom qui doit ressembler &#xe0; asip-p12-EL-TEST-ORG-AUTH_CLI-20170603-173116.p12</p></section></section><section>
 <h3><a name="Certificats_et_cl.C3.A9s_de_signature"></a>Certificats et cl&#xe9;s de signature</h3>
 <p>Pour la signature, il faut faire une autre demande avec le m&#xea;me process, &#xe0; l&#x2019;exception de l&#x2019;&#xe9;tape 3 ou il faudra demander un certificat de signature : Usage SIGN</p>
 <p><img src="./pfcngDemandeStep3Sign.PNG" alt="pfcng" /></p></section></section><section>
